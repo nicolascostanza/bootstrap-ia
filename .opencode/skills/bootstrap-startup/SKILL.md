@@ -12,59 +12,48 @@ metadata:
 
 Define y documenta una startup nueva partiendo de defaults sensatos, dejando todo configurable y listo para scaffoldear.
 
-## Cuando usar
+## Regla de oro: entrevista interactiva
 
-Cuando el usuario quiere **arrancar una idea desde cero** o rehacer sus definiciones: visión, propuesta de valor, MVP, PRD, GTM, roadmap, métricas y decisiones técnicas.
+**Nunca vuelques un cuestionario gigante.** Hacé **una ronda por vez** (máximo 4-5 preguntas) con la tool `question`, esperá las respuestas, comentá brevemente y recién ahí pasá al siguiente bloque. Cada bloque ofrece la opción **"usar defaults de este bloque"** para no responder todo.
+
+## Dónde trabajás
+
+- El **directorio actual** es la startup. Todo se escribe acá: `bootstrap.config.json`, `PROJECT_STATE.md`, `docs/`.
+- Si el directorio está vacío, es una startup nueva. **No** leas el `PROJECT_STATE.md` del kit como si fuera de la startup.
+- Los defaults están en `kit/config/bootstrap.defaults.json` (repo) o `~/.config/opencode/kit/config/bootstrap.defaults.json` (global).
+- Las plantillas están en `kit/docs-template/` (repo) o `~/.config/opencode/kit/docs-template/` (global).
 
 ## Modos
 
-1. `quick` — acepta todos los defaults de `bootstrap.config.json` y genera todo sin preguntar salvo lo esencial (nombre, problema, ICP).
-2. `guided` (default) — recorre las decisiones por área, mostrando el default y permitiendo cambiarlo.
-3. `revisar` — re-ejecutable: lee `bootstrap.config.json` y `docs/` existentes, muestra las decisiones actuales y pregunta **solo** qué cambiar.
+1. `quick` — acepta los defaults y pregunta solo el bloque A (negocio).
+2. `guided` (default) — recorre los bloques A→E, uno por vez, permitiendo ajustar.
+3. `revisar` — lee el config y los docs existentes, muestra las decisiones actuales y pregunta **solo** qué cambiar.
 
 ## Paso a paso
 
-1. **Leer estado**: abrí `bootstrap.config.json` y `PROJECT_STATE.md` (si existen). No vuelvas a preguntar lo ya decidido.
-2. **Entrevista** con la tool `question`. Agrupá así (en `quick` solo el grupo A):
-   - **A. Negocio**: nombre, problema, cliente ideal (ICP), propuesta de valor, modelo de negocio, etapa.
-   - **B. Stack**: package manager, styling, DB/ORM, auth, testing, layout (app única o split), hosting.
-   - **C. Capacidades**: email, mensajería, analytics, observabilidad, pagos.
-   - **D. Producto/GTM**: priorización, canales, posicionamiento, tono de marca.
-   - **E. Legal/Finanzas**: jurisdicción, docs legales, pricing, facturación.
-   - Mostrá siempre el default recomendado y permití aceptarlo sin fricción.
-3. **Escribir config**: actualizá `bootstrap.config.json` con las respuestas (sin borrar claves existentes).
-4. **Generar documentación** en `docs/`, con las secciones de `kit/docs-template/`:
-   - `vision.md` — problema, ICP, propuesta de valor, hipótesis.
-   - `prd.md` — alcance del MVP, criterios de aceptación Given/When/Then por feature.
-   - `gtm.md` — posicionamiento, canales, mensajes, assets.
-   - `design-brief.md` — dirección visual, componentes base, estados (loading/empty/error/success/offline).
-   - `roadmap.md` — hitos y orden de ataque del MVP.
-   - `metrics.md` — métrica norte, activación ("aha moment"), unit economics.
-   - `validation.md` — hipótesis falsables y criterios de muerte con timebox.
-   - `deliverability.md` — dominio, SPF/DKIM/DMARC, email de marca.
-   - `finops.md` — límites de free tiers y alertas de gasto.
-   - `onboarding.md` — primera experiencia y activación.
-5. **Definir MVP**: listá features, cortá a lo esencial, y creá un backlog priorizado (RICE) con las tareas ordenadas.
-6. **Seleccionar skills**: incluí en `docs/roadmap.md` los skills del kit aplicables a cada feature.
-7. **Actualizar `PROJECT_STATE.md`**: estado, próximo paso y decisiones tomadas.
-8. **Crear el repo de la startup** (preguntar antes): cada startup tiene su **propio** repo en GitHub; `bootstrap-ia` es solo el kit. Preguntá nombre y visibilidad (default privado) y ejecutá:
-   - `git init -b main` si la carpeta todavía no es un repo.
-   - `gh repo create <nombre> --private --source=. --remote=origin --push`.
-   Si el usuario solo quiere los docs, salteá este paso.
-9. **Cerrar**: mostrá un resumen de 5 líneas y proponé el siguiente paso (normalmente `/scaffold`).
+1. **Contexto**: si ya existen `bootstrap.config.json` / `docs/` en el directorio actual, leelos y no repreguntes lo definido.
+2. **Ronda A — Negocio** (siempre): nombre, problema, cliente ideal (ICP), propuesta de valor, modelo de negocio, etapa.
+3. **Ronda B — Stack**: package manager, styling, DB/ORM, auth, testing, layout (app única o split), hosting.
+4. **Ronda C — Capacidades**: email, mensajería, analytics, observabilidad, pagos.
+5. **Ronda D — Producto/GTM**: priorización, canales, posicionamiento, tono de marca.
+6. **Ronda E — Legal/Finanzas**: jurisdicción, docs legales, pricing, facturación.
+7. **Escribir `bootstrap.config.json`** en el directorio actual, partiendo de los defaults y aplicando las respuestas. No borres claves.
+8. **Generar `docs/`** desde `kit/docs-template/`: `vision`, `prd`, `gtm`, `design-brief`, `roadmap`, `metrics`, `validation`, `deliverability`, `finops`, `onboarding`.
+9. **MVP + backlog RICE** en `docs/roadmap.md`, con los skills del kit aplicables por feature.
+10. **`PROJECT_STATE.md`** en el directorio actual.
+11. **Repo propio de la startup** (preguntar antes): `git init -b main` si hace falta y `gh repo create <nombre> --private --source=. --remote=origin --push`. Saltear si el usuario solo quiere docs.
+12. **Cerrar**: resumen de 5 líneas + próximo paso (normalmente `/scaffold`).
 
 ## Reglas
 
 - **No implementes código** en este flujo; solo definición, documentación y planificación.
-- El kit `bootstrap-ia` **nunca** se usa como repo de la startup: cada startup crea su propio repo con su nombre.
-- Nunca inventes datos del negocio: lo que falte va como `[PENDIENTE]` en el doc.
-- Si el usuario cambia una tecnología, verificá que exista una alternativa documentada en `bootstrap.config.json`; si no, agregala como opción antes de aplicarla.
-- Mantené todo coherente: cada decisión de `bootstrap.config.json` debe reflejarse en los docs.
+- Una ronda de preguntas por mensaje. Nada de listas de 20 preguntas.
+- Mostrá siempre el default recomendado en cada pregunta.
+- El kit `bootstrap-ia` **nunca** es el repo de la startup.
+- Nunca inventes datos del negocio: lo que falte va como `[PENDIENTE]`.
+- Si el usuario cambia una tecnología, verificá que exista como alternativa en los defaults; si no, agregala antes de aplicarla.
 
 ## Salida esperada
 
-- `bootstrap.config.json` actualizado.
-- `docs/` con los 10 documentos.
-- Backlog priorizado del MVP.
-- `PROJECT_STATE.md` actualizado.
+- `bootstrap.config.json`, `docs/` (10 documentos), backlog RICE y `PROJECT_STATE.md`, todo en el directorio actual.
 - Resumen + próximo paso.

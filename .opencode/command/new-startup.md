@@ -8,6 +8,10 @@ Cargá el skill `bootstrap-startup` con la tool `skill` y ejecutalo.
 Modo solicitado: `$ARGUMENTS`
 Si `$ARGUMENTS` está vacío, usá `guided`.
 
-Antes de empezar, leé `bootstrap.config.json` y `PROJECT_STATE.md` para no repreguntar lo ya definido.
-Al terminar, ofrecé crear el repo **propio** de la startup (nombre + privado) con `gh repo create`; recordá que `bootstrap-ia` es solo el kit.
-Cerrá con un resumen breve y el próximo paso sugerido.
+Reglas de interacción:
+
+- Entrevistá **por rondas de 4-5 preguntas** (A→E), una ronda por mensaje, con la tool `question`. Nunca un cuestionario gigante.
+- Cada ronda ofrece la opción "usar defaults de este bloque".
+- El **directorio actual** es la startup (aunque esté vacío). Los defaults y plantillas del kit están en `~/.config/opencode/kit/`.
+- Al terminar, ofrecé crear el repo **propio** de la startup (nombre + privado) con `gh repo create`; `bootstrap-ia` es solo el kit.
+- Cerrá con un resumen breve y el próximo paso.

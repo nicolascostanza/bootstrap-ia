@@ -22,6 +22,7 @@
 - [x] B4 — Comandos de workflow: `/feature`, `/test`, `/review`, `/release`, `/hotfix`.
 - [x] B5 — Scaffolding ejecutable: skill `nextjs-postgres-scaffold`, comando `/scaffold` y `kit/scaffold/` (env, errors, logger, http, adapter de referencia).
 - [x] B6 — MCP: Neon (activo), GitHub (pendiente de `GITHUB_TOKEN`), Vercel (OAuth). Documentado en `kit/mcp/`.
+- [x] DX + multi-máquina: config global versionada (`kit/config/opencode.global.json`), defaults instalados, instalador idempotente que no pisa config, y entrevista interactiva por rondas (A→E).
 
 ## Decisiones clave
 
@@ -35,5 +36,5 @@
 
 ## Riesgos abiertos
 
-- Instalación global: definida en `kit/install/`; validar en un proyecto real.
+- Instalación global: resuelta y probada en Windows; falta validar en macOS (2 máquinas).
 - Rotura por versiones: pendiente estrategia de actualización del kit.

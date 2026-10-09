@@ -4,19 +4,20 @@
 
 ## Estado actual
 
-- **Fase**: B0 + B1 (fundación + orquestación) — en ejecución.
+- **Fase**: B2 completado (estándares técnicos). Listo para B3.
 - **Kit version**: 0.1.0
 - **Repo**: privado, `bootstrap-ia`.
 
 ## Próximo paso
 
-- B2 — Estándares técnicos (skills): `nextjs-conventions`, `react-conventions`, `typescript-conventions`, `styling-ui`, `data-postgres`, `api-design`, `testing-*`, `git-flow`, `ci-cd`, `security`, `observability`, `performance`.
+- B3 — Agentes de ingeniería: `architect`, `code-reviewer`, `debugger`, `qa-tester`, `refactorer`, `devops`, `security-auditor`.
 
 ## Hitos completados
 
 - [x] Definición completa de arquitectura, decisiones y defaults (con el usuario).
 - [x] B0 — Fundación del repo.
 - [x] B1 — Orquestación (`founder`, `bootstrap-startup`, `/new-startup`, `/configure`, docs-template, install).
+- [x] B2 — Estándares técnicos (13 skills): `nextjs-conventions`, `react-conventions`, `typescript-conventions`, `styling-ui`, `data-postgres`, `api-design`, `testing-unit-jest`, `testing-e2e`, `git-flow`, `ci-cd`, `security`, `observability`, `performance`.
 
 ## Decisiones clave
 

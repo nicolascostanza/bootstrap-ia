@@ -47,11 +47,16 @@ Cuando el usuario quiere **arrancar una idea desde cero** o rehacer sus definici
 5. **Definir MVP**: listá features, cortá a lo esencial, y creá un backlog priorizado (RICE) con las tareas ordenadas.
 6. **Seleccionar skills**: incluí en `docs/roadmap.md` los skills del kit aplicables a cada feature.
 7. **Actualizar `PROJECT_STATE.md`**: estado, próximo paso y decisiones tomadas.
-8. **Cerrar**: mostrá un resumen de 5 líneas y proponé el siguiente paso (normalmente `/scaffold`).
+8. **Crear el repo de la startup** (preguntar antes): cada startup tiene su **propio** repo en GitHub; `bootstrap-ia` es solo el kit. Preguntá nombre y visibilidad (default privado) y ejecutá:
+   - `git init -b main` si la carpeta todavía no es un repo.
+   - `gh repo create <nombre> --private --source=. --remote=origin --push`.
+   Si el usuario solo quiere los docs, salteá este paso.
+9. **Cerrar**: mostrá un resumen de 5 líneas y proponé el siguiente paso (normalmente `/scaffold`).
 
 ## Reglas
 
 - **No implementes código** en este flujo; solo definición, documentación y planificación.
+- El kit `bootstrap-ia` **nunca** se usa como repo de la startup: cada startup crea su propio repo con su nombre.
 - Nunca inventes datos del negocio: lo que falte va como `[PENDIENTE]` en el doc.
 - Si el usuario cambia una tecnología, verificá que exista una alternativa documentada en `bootstrap.config.json`; si no, agregala como opción antes de aplicarla.
 - Mantené todo coherente: cada decisión de `bootstrap.config.json` debe reflejarse en los docs.

@@ -4,11 +4,23 @@ Hace que el kit esté disponible en **cualquier proyecto** de opencode.
 
 ## Instalar
 
+El instalador vive **en el repo del kit**. Corrélo **desde la carpeta del kit**:
+
 ```bash
+cd bootstrap-ia
 node kit/install/install.mjs
 ```
 
-Copia agentes, comandos y skills a `~/.config/opencode/` (en Windows: `%USERPROFILE%\.config\opencode`).
+O desde cualquier carpeta, con la ruta absoluta al script:
+
+```bash
+node "C:/Users/Nikito/Desktop/NICO/proyectos/boostrap-ia/kit/install/install.mjs"
+```
+
+Copia agentes, comandos y skills a `~/.config/opencode/` (en Windows: `%USERPROFILE%\.config\opencode`). El script localiza sus archivos por su propia ubicación, así que funciona sin importar dónde estés parado.
+
+**Una sola vez.** Después de instalarlo y reiniciar opencode, ya podés abrir una carpeta vacía cualquiera y usar `/new-startup`.<br>
+No se corre dentro de la carpeta vacía: ahí no existe `kit/install/install.mjs`.
 
 ## Usar
 

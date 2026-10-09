@@ -6,6 +6,13 @@ Kit de opencode para bootstrapear startups: agentes, skills, comandos, estándar
 
 **Todo por defecto, todo configurable.** Cada decisión vive en `bootstrap.config.json` y se puede cambiar **paso a paso** con `/configure`. Nada está escondido en los prompts.
 
+## Modelo de repos
+
+- `bootstrap-ia` es **el kit** (este repo). **No** es el repo de ninguna startup.
+- Cada startup es **su propio repo** en GitHub, con el nombre que le des.
+- Flujo recomendado (global): carpeta nueva → `/new-startup` → el `founder` te pregunta el nombre y **crea el repo privado de la startup**.
+- Alternativa (template): marcá `bootstrap-ia` como Template en GitHub y creá cada startup con `gh repo create <nombre> --template nicolascostanza/bootstrap-ia --private`.
+
 ## Cómo se usa
 
 | Modo | Cómo | Cuándo |

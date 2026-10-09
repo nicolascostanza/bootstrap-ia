@@ -9,4 +9,5 @@ Modo solicitado: `$ARGUMENTS`
 Si `$ARGUMENTS` está vacío, usá `guided`.
 
 Antes de empezar, leé `bootstrap.config.json` y `PROJECT_STATE.md` para no repreguntar lo ya definido.
-Al terminar, mostrá un resumen breve y el próximo paso sugerido.
+Al terminar, ofrecé crear el repo **propio** de la startup (nombre + privado) con `gh repo create`; recordá que `bootstrap-ia` es solo el kit.
+Cerrá con un resumen breve y el próximo paso sugerido.

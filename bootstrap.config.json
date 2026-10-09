@@ -1,0 +1,106 @@
+{
+  "$comment": "Fuente unica de verdad del kit. Todo por defecto, todo configurable con /configure.",
+  "kitVersion": "0.1.0",
+  "project": {
+    "name": "",
+    "jurisdiction": "AR",
+    "stage": "bootstrapped",
+    "language": "es"
+  },
+  "engineering": {
+    "packageManager": "pnpm",
+    "styling": "tailwind+shadcn",
+    "database": "drizzle",
+    "dbHost": "neon",
+    "auth": "neon-auth",
+    "login": ["google", "email-magic-link"],
+    "twoFactor": ["email-otp", "totp"],
+    "testing": "jest+rtl+playwright",
+    "lint": "eslint+prettier",
+    "git": "github-flow+conventional-commits",
+    "layout": "single-nextjs",
+    "backendHost": "render"
+  },
+  "capabilities": {
+    "email": "per-startup",
+    "emailSuggested": "resend",
+    "messaging": "whatsapp-cloud-api",
+    "otpCostCascade": true,
+    "analytics": "posthog",
+    "errors": "sentry",
+    "logs": "axiom",
+    "uptime": "better-stack",
+    "payments": "mercadopago",
+    "paymentsAdapter": true
+  },
+  "product": {
+    "discovery": "lean-canvas+jtbd",
+    "prioritization": "rice",
+    "design": "shadcn",
+    "research": "light",
+    "specFlow": "sdd-light+bdd-criteria"
+  },
+  "testing": {
+    "stack": "jest+rtl+playwright",
+    "philosophy": "spec-first + behavior",
+    "coverageTarget": 90,
+    "coverageScope": "domain+services",
+    "coverageGate": "ratchet",
+    "e2eScope": "broad",
+    "e2eCadence": {
+      "critical": "on-pr",
+      "full": "nightly"
+    },
+    "networkMock": "msw",
+    "a11y": "axe",
+    "mutation": true,
+    "dbIsolation": "neon-branch-per-pr"
+  },
+  "marketing": {
+    "positioning": "dunford",
+    "channels": ["content", "seo", "communities"],
+    "brandVoice": "simple",
+    "assets": ["landing", "emails", "posts"]
+  },
+  "legal": {
+    "jurisdiction": "AR",
+    "docs": ["tos", "privacy", "cookies"],
+    "compliance": "gdpr-lite"
+  },
+  "finance": {
+    "pricing": "subscription",
+    "model": "saas-simple",
+    "invoicing": "manual"
+  },
+  "ops": {
+    "support": "email+faq",
+    "observability": ["sentry", "axiom", "better-stack"],
+    "onboarding": "doc+emails",
+    "finops": "guardrails"
+  },
+  "founderOs": [
+    "metrics-activation",
+    "validation-kill-criteria",
+    "discovery-loop",
+    "deliverability-dns",
+    "finops",
+    "onboarding"
+  ],
+  "fundraising": {
+    "stage": "bootstrapped",
+    "instrument": "safe",
+    "deck": "10-slides"
+  },
+  "adapters": [
+    "email",
+    "messaging",
+    "auth",
+    "otp",
+    "payments",
+    "analytics",
+    "logger",
+    "observability",
+    "flags",
+    "jobs"
+  ]
+}

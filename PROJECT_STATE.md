@@ -4,13 +4,13 @@
 
 ## Estado actual
 
-- **Fase**: B5 completado (scaffolding ejecutable). Listo para B6.
+- **Fase**: B6 completado (MCP Neon + GitHub + Vercel). Listo para B7.
 - **Kit version**: 0.1.0
 - **Repo**: privado, `bootstrap-ia`.
 
 ## Próximo paso
 
-- B6 — Integraciones MCP: GitHub, Neon, Vercel (sin Figma), con permisos seguros.
+- B7 — Producto: agentes `product-manager`, `user-researcher`, skill `prd-writer`, comando `/prd`.
 
 ## Hitos completados
 
@@ -21,6 +21,7 @@
 - [x] B3 — Agentes de ingeniería: `architect`, `code-reviewer`, `debugger`, `qa-tester`, `refactorer`, `devops`, `security-auditor`.
 - [x] B4 — Comandos de workflow: `/feature`, `/test`, `/review`, `/release`, `/hotfix`.
 - [x] B5 — Scaffolding ejecutable: skill `nextjs-postgres-scaffold`, comando `/scaffold` y `kit/scaffold/` (env, errors, logger, http, adapter de referencia).
+- [x] B6 — MCP: Neon (activo), GitHub (pendiente de `GITHUB_TOKEN`), Vercel (OAuth). Documentado en `kit/mcp/`.
 
 ## Decisiones clave
 

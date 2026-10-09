@@ -4,13 +4,13 @@
 
 ## Estado actual
 
-- **Fase**: B4 completado (agentes de ingeniería + workflow de dev). Listo para B5.
+- **Fase**: B5 completado (scaffolding ejecutable). Listo para B6.
 - **Kit version**: 0.1.0
 - **Repo**: privado, `bootstrap-ia`.
 
 ## Próximo paso
 
-- B5 — Scaffolding ejecutable: template Next.js + TS + Postgres con las decisiones aplicadas y comando `/scaffold` (CLIs reales + verificación).
+- B6 — Integraciones MCP: GitHub, Neon, Vercel (sin Figma), con permisos seguros.
 
 ## Hitos completados
 
@@ -20,6 +20,7 @@
 - [x] B2 — Estándares técnicos (13 skills).
 - [x] B3 — Agentes de ingeniería: `architect`, `code-reviewer`, `debugger`, `qa-tester`, `refactorer`, `devops`, `security-auditor`.
 - [x] B4 — Comandos de workflow: `/feature`, `/test`, `/review`, `/release`, `/hotfix`.
+- [x] B5 — Scaffolding ejecutable: skill `nextjs-postgres-scaffold`, comando `/scaffold` y `kit/scaffold/` (env, errors, logger, http, adapter de referencia).
 
 ## Decisiones clave
 

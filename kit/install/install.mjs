@@ -12,6 +12,7 @@ const TARGETS = [
   { from: ".opencode/agent", to: "agent" },
   { from: ".opencode/command", to: "command" },
   { from: ".opencode/skills", to: "skills" },
+  { from: "kit", to: "kit" },
 ];
 
 async function copyDir(from, to) {

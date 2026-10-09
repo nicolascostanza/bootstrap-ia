@@ -4,20 +4,22 @@
 
 ## Estado actual
 
-- **Fase**: B2 completado (estándares técnicos). Listo para B3.
+- **Fase**: B4 completado (agentes de ingeniería + workflow de dev). Listo para B5.
 - **Kit version**: 0.1.0
 - **Repo**: privado, `bootstrap-ia`.
 
 ## Próximo paso
 
-- B3 — Agentes de ingeniería: `architect`, `code-reviewer`, `debugger`, `qa-tester`, `refactorer`, `devops`, `security-auditor`.
+- B5 — Scaffolding ejecutable: template Next.js + TS + Postgres con las decisiones aplicadas y comando `/scaffold` (CLIs reales + verificación).
 
 ## Hitos completados
 
 - [x] Definición completa de arquitectura, decisiones y defaults (con el usuario).
 - [x] B0 — Fundación del repo.
 - [x] B1 — Orquestación (`founder`, `bootstrap-startup`, `/new-startup`, `/configure`, docs-template, install).
-- [x] B2 — Estándares técnicos (13 skills): `nextjs-conventions`, `react-conventions`, `typescript-conventions`, `styling-ui`, `data-postgres`, `api-design`, `testing-unit-jest`, `testing-e2e`, `git-flow`, `ci-cd`, `security`, `observability`, `performance`.
+- [x] B2 — Estándares técnicos (13 skills).
+- [x] B3 — Agentes de ingeniería: `architect`, `code-reviewer`, `debugger`, `qa-tester`, `refactorer`, `devops`, `security-auditor`.
+- [x] B4 — Comandos de workflow: `/feature`, `/test`, `/review`, `/release`, `/hotfix`.
 
 ## Decisiones clave
 

@@ -41,8 +41,10 @@ Define y documenta una startup nueva partiendo de defaults sensatos, dejando tod
 8. **Generar `docs/`** desde `kit/docs-template/`: `vision`, `prd`, `gtm`, `design-brief`, `roadmap`, `metrics`, `validation`, `deliverability`, `finops`, `onboarding`.
 9. **MVP + backlog RICE** en `docs/roadmap.md`, con los skills del kit aplicables por feature.
 10. **`PROJECT_STATE.md`** en el directorio actual.
-11. **Repo propio de la startup** (preguntar antes): `git init -b main` si hace falta y `gh repo create <nombre> --private --source=. --remote=origin --push`. Saltear si el usuario solo quiere docs.
-12. **Cerrar**: resumen de 5 líneas + próximo paso (normalmente `/scaffold`).
+11. **`AGENTS.md`**: copiá `kit/config/AGENTS.md` (global: `~/.config/opencode/kit/config/AGENTS.md`) al directorio actual si no existe.
+12. **Multi-tool**: generá los artefactos de Claude Code y Codex con `node ~/.config/opencode/kit/sync/sync.mjs --target .`.
+13. **Repo propio de la startup** (preguntar antes): `git init -b main` si hace falta y `gh repo create <nombre> --private --source=. --remote=origin --push`. Saltear si el usuario solo quiere docs.
+14. **Cerrar**: resumen de 5 líneas + próximo paso (normalmente `/scaffold`).
 
 ## Reglas
 

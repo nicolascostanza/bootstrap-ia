@@ -8,9 +8,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const KIT_ROOT = resolve(__dirname, "..", "..");
 const CONFIG_DIR = join(homedir(), ".config", "opencode");
 const GLOBAL_CONFIG = join(CONFIG_DIR, "opencode.json");
-const CONFIG_TEMPLATE = join(KIT_ROOT, "kit", "config", "opencode.global.json");
-const DEFAULTS_SRC = join(KIT_ROOT, "bootstrap.config.json");
-const DEFAULTS_DEST = join(CONFIG_DIR, "kit", "config", "bootstrap.defaults.json");
 
 const TARGETS = [
   { from: ".opencode/agent", to: "agent" },
@@ -18,6 +15,29 @@ const TARGETS = [
   { from: ".opencode/skills", to: "skills" },
   { from: "kit", to: "kit" },
 ];
+
+const EXTRA_COPIES = [
+  { from: "bootstrap.config.json", to: join("kit", "config", "bootstrap.defaults.json") },
+  { from: "AGENTS.md", to: join("kit", "config", "AGENTS.md") },
+];
+
+function toOpencodeHeaders(headers) {
+  const out = {};
+  for (const [key, value] of Object.entries(headers)) {
+    out[key] = value.replace(/\$\{([A-Z0-9_]+)\}/g, "{env:$1}");
+  }
+  return out;
+}
+
+function toOpencodeMcp(neutral) {
+  const mcp = {};
+  for (const [name, server] of Object.entries(neutral.servers || {})) {
+    const entry = { type: server.type || "remote", url: server.url, enabled: server.enabled !== false };
+    if (server.headers) entry.headers = toOpencodeHeaders(server.headers);
+    mcp[name] = entry;
+  }
+  return mcp;
+}
 
 async function copyDir(from, to) {
   const src = join(KIT_ROOT, from);
@@ -41,22 +61,27 @@ async function copyDir(from, to) {
   return count;
 }
 
-async function copyDefaults() {
-  if (!existsSync(DEFAULTS_SRC)) {
-    console.warn("[skip] no existe bootstrap.config.json");
+async function copyExtra({ from, to }) {
+  const src = join(KIT_ROOT, from);
+  if (!existsSync(src)) {
+    console.warn(`[skip] no existe: ${from}`);
     return;
   }
-  await mkdir(dirname(DEFAULTS_DEST), { recursive: true });
-  await cp(DEFAULTS_SRC, DEFAULTS_DEST, { force: true });
-  console.log(`[ok] defaults -> ${DEFAULTS_DEST}`);
+  const dest = join(CONFIG_DIR, to);
+  await mkdir(dirname(dest), { recursive: true });
+  await cp(src, dest, { force: true });
+  console.log(`[ok] ${from} -> ${dest}`);
 }
 
 async function ensureGlobalConfig() {
-  if (!existsSync(CONFIG_TEMPLATE)) {
-    console.warn("[skip] no existe kit/config/opencode.global.json");
+  const neutralPath = join(KIT_ROOT, "kit", "config", "mcp.json");
+  if (!existsSync(neutralPath)) {
+    console.warn("[skip] no existe kit/config/mcp.json");
     return;
   }
-  const template = JSON.parse(await readFile(CONFIG_TEMPLATE, "utf8"));
+  const neutral = JSON.parse(await readFile(neutralPath, "utf8"));
+  const template = toOpencodeMcp(neutral);
+
   let current = {};
   if (existsSync(GLOBAL_CONFIG)) {
     try {
@@ -67,20 +92,23 @@ async function ensureGlobalConfig() {
       return;
     }
   }
+
   const mcp = { ...(current.mcp ?? {}) };
   let added = 0;
-  for (const [name, server] of Object.entries(template.mcp ?? {})) {
+  for (const [name, server] of Object.entries(template)) {
     if (!(name in mcp)) {
       mcp[name] = server;
       added += 1;
     }
   }
+
   const neonAuth = mcp.Neon?.headers?.Authorization;
   if (typeof neonAuth === "string" && /Bearer\s+napi_/.test(neonAuth)) {
     mcp.Neon.headers.Authorization = "Bearer {env:NEON_API_KEY}";
     console.log("[fix] Neon: token en texto plano reemplazado por {env:NEON_API_KEY}");
   }
-  const merged = { $schema: template.$schema, ...current, mcp };
+
+  const merged = { $schema: "https://opencode.ai/config.json", ...current, mcp };
   await mkdir(CONFIG_DIR, { recursive: true });
   await writeFile(GLOBAL_CONFIG, `${JSON.stringify(merged, null, 2)}\n`);
   console.log(`[ok] config global -> ${GLOBAL_CONFIG} (${added} MCP nuevos)`);
@@ -97,14 +125,14 @@ async function main() {
     total += n;
   }
 
-  await copyDefaults();
+  for (const extra of EXTRA_COPIES) await copyExtra(extra);
   await ensureGlobalConfig();
 
   console.log(`\nListo: ${total} archivos instalados.`);
   console.log("Env vars por maquina (no se commitean): NEON_API_KEY, GITHUB_TOKEN");
   console.log("Vercel: opencode mcp auth vercel");
+  console.log("Multi-tool en un proyecto: node ~/.config/opencode/kit/sync/sync.mjs --target .");
   console.log("Reinicia opencode para que tome los cambios.");
-  console.log("En cualquier proyecto nuevo ya podes usar /new-startup y /scaffold.");
 }
 
 main().catch((err) => {

@@ -3,7 +3,7 @@ description: Arranca el bootstrap de una startup nueva (entrevista + config + do
 agent: founder
 ---
 
-Cargá el skill `bootstrap-startup` con la tool `skill` y ejecutalo.
+Cargá y ejecutá el skill `bootstrap-startup`.
 
 Modo solicitado: `$ARGUMENTS`
 Si `$ARGUMENTS` está vacío, usá `guided`.

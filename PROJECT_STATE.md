@@ -12,7 +12,7 @@
 
 - Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold` → `/feature`) y ajustar lo que friccione.
 - Validar la instalación en macOS.
-- Definir estrategia de versionado/actualización del kit.
+- Validar el soporte multi-tool en Claude Code y Codex reales.
 
 ## Hitos completados
 
@@ -32,6 +32,8 @@
 - [x] B11 — Ops/Legal/Finanzas: `ops-analyst`, `pricing-model`, `legal-docs`.
 - [x] B12 — Distribución: template de GitHub, `CHANGELOG.md`, `/status`.
 - [x] B13 — Founder OS: `metrics-activation`, `validation-kill-criteria`, `discovery-loop`, `deliverability-dns`, `finops-guardrails`, `onboarding-activation`.
+- [x] Zod explícito (`engineering.validation`) y skill `accessibility` (WCAG AA).
+- [x] Soporte multi-tool: `kit/sync/sync.mjs` + `kit/config/mcp.json` (Claude Code y Codex, project-level).
 
 ## Decisiones clave
 

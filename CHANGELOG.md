@@ -2,6 +2,20 @@
 
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y versionado [SemVer](https://semver.org/lang/es/).
 
+## [Unreleased]
+
+### Agregado
+
+- Validación explícita en el config: `engineering.validation` (default **Zod**; alternativas `valibot`, `arktype`, `none`).
+- Accesibilidad explícita: `engineering.accessibility` (default **WCAG 2.2 AA**) y skill `accessibility`.
+- Soporte **multi-tool**: `kit/sync/sync.mjs` genera artefactos para **Claude Code** (`.claude/agents`, `.claude/commands`, `.claude/skills`, `CLAUDE.md`, `.mcp.json`) y **Codex** (`.codex/agents`, `.codex/config.toml`, `.agents/skills`).
+- Fuente MCP neutra en `kit/config/mcp.json` (una sola fuente → opencode, Claude y Codex) y documentación en `kit/multitool/`.
+
+### Cambiado
+
+- Scaffold instala `zod`, `jest-axe` y `@axe-core/playwright`.
+- Comandos neutros entre herramientas (sin referencias a `tool task`/`tool skill`) y `sync` integrado en `/new-startup` y `/scaffold`.
+
 ## [0.1.0] - 2026-10-10
 
 ### Agregado

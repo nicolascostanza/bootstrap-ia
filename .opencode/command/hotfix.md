@@ -7,7 +7,7 @@ Hotfix: `$ARGUMENTS`
 
 Ejecutá el flujo de emergencia:
 
-1. **Diagnóstico**: delegá a `@debugger` (tool `task`) para causa raíz y evidencia.
+1. **Diagnóstico**: delegá al subagente `@debugger` para causa raíz y evidencia.
 2. **Fix mínimo**: el cambio más chico que resuelve; sin refactors ni features de paso.
 3. **Test de regresión**: delegá a `@qa-tester` un test que falle sin el fix y pase con él.
 4. **Rama**: `fix/<slug>` desde `main`; Conventional Commit `fix(...)`.

@@ -8,7 +8,7 @@ Feature a implementar: `$ARGUMENTS`
 Ejecutá el flujo completo del kit:
 
 1. **Spec**: si no existe, agregá la feature a `docs/prd.md` con criterios de aceptación `Dado/Cuando/Entonces` y su contrato técnico (endpoints/actions, modelo de datos, adapter si aplica).
-2. **Plan**: si hay decisiones técnicas relevantes, delegá a `@architect` (tool `task`) y registrá el ADR si corresponde. Cargá los skills del kit que apliquen.
+2. **Plan**: si hay decisiones técnicas relevantes, delegá al subagente `@architect` y registrá el ADR si corresponde. Cargá los skills del kit que apliquen.
 3. **Implementación**: implementá respetando `nextjs-conventions`, `react-conventions`, `typescript-conventions`, `api-design`, `data-postgres`, `security`.
 4. **Tests**: delegá a `@qa-tester`; un test por criterio de aceptación. Verificá cobertura.
 5. **Review**: delegá a `@code-reviewer` y aplicá los cambios solicitados.

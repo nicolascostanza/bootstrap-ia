@@ -88,6 +88,7 @@ pnpm lint && pnpm typecheck && pnpm test && pnpm build
 ```
 
 - Deploy de preview.
+- Generá los artefactos multi-tool: `node ~/.config/opencode/kit/sync/sync.mjs --target .`.
 - Actualizá `PROJECT_STATE.md` y `docs/roadmap.md`.
 
 ## Reglas

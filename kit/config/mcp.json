@@ -1,12 +1,12 @@
 {
-  "$schema": "https://opencode.ai/config.json",
-  "mcp": {
+  "$comment": "Fuente neutra de MCP. sync.mjs la convierte al formato de opencode, Claude Code y Codex.",
+  "servers": {
     "Neon": {
       "type": "remote",
       "url": "https://mcp.neon.tech/mcp",
       "enabled": true,
       "headers": {
-        "Authorization": "Bearer {env:NEON_API_KEY}"
+        "Authorization": "Bearer ${NEON_API_KEY}"
       }
     },
     "github": {
@@ -14,7 +14,7 @@
       "url": "https://api.githubcopilot.com/mcp/",
       "enabled": false,
       "headers": {
-        "Authorization": "Bearer {env:GITHUB_TOKEN}",
+        "Authorization": "Bearer ${GITHUB_TOKEN}",
         "X-MCP-Readonly": "false"
       }
     },

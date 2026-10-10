@@ -4,13 +4,15 @@
 
 ## Estado actual
 
-- **Fase**: B6 completado (MCP Neon + GitHub + Vercel). Listo para B7.
+- **Fase**: B0–B13 completados. Kit 0.1.0 funcional de punta a punta.
 - **Kit version**: 0.1.0
 - **Repo**: privado, `bootstrap-ia`.
 
 ## Próximo paso
 
-- B7 — Producto: agentes `product-manager`, `user-researcher`, skill `prd-writer`, comando `/prd`.
+- Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold` → `/feature`) y ajustar lo que friccione.
+- Validar la instalación en macOS.
+- Definir estrategia de versionado/actualización del kit.
 
 ## Hitos completados
 
@@ -23,6 +25,13 @@
 - [x] B5 — Scaffolding ejecutable: skill `nextjs-postgres-scaffold`, comando `/scaffold` y `kit/scaffold/` (env, errors, logger, http, adapter de referencia).
 - [x] B6 — MCP: Neon (activo), GitHub (pendiente de `GITHUB_TOKEN`), Vercel (OAuth). Documentado en `kit/mcp/`.
 - [x] DX + multi-máquina: config global versionada (`kit/config/opencode.global.json`), defaults instalados, instalador idempotente que no pisa config, y entrevista interactiva por rondas (A→E).
+- [x] B7 — Producto: `product-manager`, `user-researcher`, `prd-writer`, `/prd`.
+- [x] B8 — Diseño/UX: `ux-designer`, `ui-reviewer`, `design-system`, `/design`.
+- [x] B9 — GTM: `growth-strategist`, `copywriter`, `landing-page`, `gtm-launch`, `/gtm`.
+- [x] B10 — Fundraising: `pitch-coach`, `pitch-deck`, `/pitch`.
+- [x] B11 — Ops/Legal/Finanzas: `ops-analyst`, `pricing-model`, `legal-docs`.
+- [x] B12 — Distribución: template de GitHub, `CHANGELOG.md`, `/status`.
+- [x] B13 — Founder OS: `metrics-activation`, `validation-kill-criteria`, `discovery-loop`, `deliverability-dns`, `finops-guardrails`, `onboarding-activation`.
 
 ## Decisiones clave
 

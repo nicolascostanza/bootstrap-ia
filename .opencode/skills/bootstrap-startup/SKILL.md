@@ -33,7 +33,7 @@ Define y documenta una startup nueva partiendo de defaults sensatos, dejando tod
 
 1. **Contexto**: si ya existen `bootstrap.config.json` / `docs/` en el directorio actual, leelos y no repreguntes lo definido.
 2. **Ronda A — Negocio** (siempre): nombre, problema, cliente ideal (ICP), propuesta de valor, modelo de negocio, etapa.
-3. **Ronda B — Stack**: package manager, styling, DB/ORM, auth, testing, layout (app única o split), hosting.
+3. **Ronda B — Stack**: package manager, styling, validación (default Zod), accesibilidad (default WCAG AA), DB/ORM, auth, testing, layout (app única o split), hosting.
 4. **Ronda C — Capacidades**: email, mensajería, analytics, observabilidad, pagos.
 5. **Ronda D — Producto/GTM**: priorización, canales, posicionamiento, tono de marca.
 6. **Ronda E — Legal/Finanzas**: jurisdicción, docs legales, pricing, facturación.

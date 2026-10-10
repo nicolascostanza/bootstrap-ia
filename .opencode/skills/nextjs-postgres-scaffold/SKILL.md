@@ -16,7 +16,7 @@ metadata:
 
 ## Paso 0 — Leer decisiones
 
-Leé `bootstrap.config.json`. De ahí salen: `packageManager`, `styling`, `database`, `auth`, `vault`/`layout`, `testing`, `lint`. No asumas valores.
+Leé `bootstrap.config.json`. De ahí salen: `packageManager`, `styling`, `database`, `auth`, `layout`, `testing`, `lint`, `validation` y `accessibility`. No asumas valores.
 
 ## Paso 1 — App Next.js (CLI)
 
@@ -55,6 +55,12 @@ pnpm add -D drizzle-kit
 
 ## Paso 5 — Archivos base del kit
 
+```bash
+pnpm add zod
+```
+
+`lib/env.ts` usa el validador del kit (`engineering.validation`, default Zod).
+
 Copiá desde `kit/scaffold/` (global: `~/.config/opencode/kit/scaffold/`):
 
 - `.env.example`
@@ -65,8 +71,8 @@ Completá las env en `.env` (nunca commitear).
 
 ## Paso 6 — Testing
 
-- Jest: `pnpm add -D jest @types/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event msw @next/jest`
-- Playwright: `pnpm create playwright`
+- Jest: `pnpm add -D jest @types/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event msw jest-axe @next/jest`
+- Playwright: `pnpm create playwright` y `pnpm add -D @axe-core/playwright`
 - Configurá cobertura (90% dominio, ratchet), MSW handlers y un test de humo por capa.
 - Verificá: `pnpm test` y `pnpm test:e2e` (al menos `@critical`).
 

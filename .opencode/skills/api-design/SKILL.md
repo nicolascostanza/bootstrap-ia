@@ -14,7 +14,7 @@ metadata:
 
 - Mutaciones internas: **Server Actions**.
 - Endpoints HTTP (webhooks, API pública, integraciones): **Route Handlers** en `app/api/`.
-- Validación de entrada/salida con **Zod**.
+- Validación de entrada/salida con el validador del kit (`engineering.validation`, default **Zod**).
 
 ## Reglas
 

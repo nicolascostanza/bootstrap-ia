@@ -13,6 +13,8 @@ Archivos que se copian al proyecto de cada startup durante `/scaffold`, **despu�
 | `lib/http.ts` | Respuestas `ok`/`fail` con forma estándar |
 | `lib/adapters/email.ts` | Implementación **de referencia** del patrón adapter |
 
+> `lib/env.ts` requiere el validador del kit (`engineering.validation`, default Zod): instalalo con `pnpm add zod` antes de copiar estos archivos.
+
 ## Patrón adapter (aplicar al resto)
 
 Cada proveedor externo vive detrás de una interfaz fina y una fábrica que elige implementación según env:

@@ -42,6 +42,7 @@ Un fundamento **mínimo y consistente**, no un DS completo. El mayor ROI está e
 - Contraste mínimo 4.5:1 en texto.
 - Labels en inputs; errores asociados al campo.
 - Verificar con `axe` en los tests de componentes.
+- Detalle completo y checklist: skill `accessibility` (`engineering.accessibility`, default WCAG 2.2 AA).
 
 ## Cómo afecta al scaffold
 

@@ -17,6 +17,8 @@
     "twoFactor": ["email-otp", "totp"],
     "testing": "jest+rtl+playwright",
     "lint": "eslint+prettier",
+    "validation": "zod",
+    "accessibility": "wcag-aa",
     "git": "github-flow+conventional-commits",
     "layout": "single-nextjs",
     "backendHost": "render"

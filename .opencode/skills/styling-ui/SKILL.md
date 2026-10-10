@@ -46,6 +46,7 @@ Toda vista con datos define:
 
 - Foco visible, contraste AA, labels en inputs, roles correctos, navegación por teclado.
 - Verificar con `axe` en tests de componentes.
+- Detalle y checklist: skill `accessibility`.
 
 ### Espaciado y layout
 

@@ -27,7 +27,7 @@ En orden de velocidad, todos obligatorios:
 3. `test:unit` (Jest) + **coverage gate** (ratchet).
 4. `build` (producción).
 5. `test:e2e @critical` contra preview.
-6. `a11y` (axe) en componentes base.
+6. `a11y` (axe) en componentes base (ver skill `accessibility`).
 
 `@full` E2E corre nightly y bloquea el merge si estaba en el pre-merge.
 

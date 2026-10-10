@@ -27,7 +27,8 @@ metadata:
 
 ### Validación en bordes
 
-- Todo input externo (HTTP, forms, env, respuestas de terceros) se valida con **Zod**.
+- Todo input externo (HTTP, forms, env, respuestas de terceros) se valida con el validador del kit (`engineering.validation`, default **Zod**).
+- Alternativas documentadas: `valibot`, `arktype`, `none`. Cambiar de validador es editar el config y reemplazar los schemas; no cambia la arquitectura.
 - Los schemas viven junto al borde que validan (`schemas.ts`), y el tipo se infiere del schema.
 - `lib/env.ts` valida las variables de entorno al arrancar.
 

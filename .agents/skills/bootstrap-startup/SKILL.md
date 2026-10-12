@@ -39,7 +39,7 @@ Define y documenta una startup nueva partiendo de defaults sensatos, dejando tod
 5. **Ronda D — Producto/GTM**: priorización, canales, posicionamiento, tono de marca.
 6. **Ronda E — Legal/Finanzas**: jurisdicción, docs legales, pricing, facturación.
 7. **Escribir `bootstrap.config.json`** en el directorio actual, partiendo de los defaults y aplicando las respuestas. No borres claves.
-8. **Generar `docs/`** desde `kit/docs-template/`: `vision`, `prd`, `gtm`, `design-brief`, `roadmap`, `metrics`, `validation`, `deliverability`, `finops`, `onboarding`.
+8. **Generar `docs/`** desde `kit/docs-template/`: los documentos core + `docs/README.md` (índice) y las subcarpetas `specs/`, `adr/`, `reviews/`, `research/` (skill `project-structure`). Las features del MVP se especifican con `/feature` en `docs/specs/`.
 9. **MVP + backlog RICE** en `docs/roadmap.md`, con los skills del kit aplicables por feature.
 10. **`PROJECT_STATE.md`** en el directorio actual.
 11. **`AGENTS.md`**: copiá `kit/config/AGENTS.md` (global: `~/.config/opencode/kit/config/AGENTS.md`) al directorio actual si no existe.

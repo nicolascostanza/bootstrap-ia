@@ -44,4 +44,4 @@ En `docs/validation.md`, tabla:
 
 ## Salida
 
-Bitácora viva en `docs/validation.md` y ajustes en `docs/vision.md` / `docs/prd.md`.
+Bitácora viva en `docs/validation.md` y ajustes en `docs/vision.md`, el índice `docs/prd.md` y las specs afectadas.

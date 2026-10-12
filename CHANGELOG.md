@@ -19,6 +19,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **Skill `dev-environment`** (opt-in): nativo vs devcontainer vs compose-only, con plantillas `.devcontainer/` (app + servicios opcionales) y checklist cross-platform.
 - **Product review**: skill `product-review` + subagente `product-reviewer` + comando `/product-review` (feedback de producto sobre una feature ya hecha).
 - **Paralelismo**: skill `parallel-work` (fan-out portable: review, tests, recon) + helper `kit/dev/harness.mjs` (detecta harness y capacidades).
+- **Estructura de proyecto**: skill `project-structure`, índice `docs/README.md` y plantilla `docs/specs/_template.md`.
 
 ### Cambiado
 
@@ -31,6 +32,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - `/feature` ofrece crear el worktree antes de codear; scaffold deja el `dev` script con `--port ${PORT:-3000}`, copia `scripts/ports.mjs` y agrega `.worktrees/` al `.gitignore`.
 - `/feature` cierra sugiriendo `/product-review`.
 - `/review`, `/feature` y `/brainstorm` ahora lanzan sus subagentes en **paralelo** y consolidan; `bootstrap.config.json` agrega `engineering.parallelism` (3).
+- **Specs por feature**: viven en `docs/specs/<feature>.md`; `docs/prd.md` pasa a ser índice. `prd-writer`, `/prd`, `/feature`, `qa-tester`, `product-review` y `/test` apuntan a la spec.
+- Scaffold y `/new-startup` generan el árbol de documentación.
 - `bootstrap.config.json`: `engineering.worktrees`, `ports`, `portsBase`, `portsRange`, `dbPerWorktree`, `devEnv`.
 
 ## [0.1.0] - 2026-10-10

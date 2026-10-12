@@ -68,6 +68,7 @@ Copiá desde `kit/scaffold/` (global: `~/.config/opencode/kit/scaffold/`):
 - `lib/adapters/email.ts` (implementación de referencia del patrón adapter)
 - `scripts/ports.mjs` (copiá `kit/dev/ports.mjs`)
 - Si `engineering.devEnv` es `devcontainer`, copiá `kit/dev/devcontainer/` a `.devcontainer/`
+- Si `docs/` no existe, creá el árbol de documentación (skill `project-structure`)
 
 En `package.json`, dejá el `dev` script como `"dev": "next dev --port ${PORT:-3000}"`. Agregá `.worktrees/` a `.gitignore`.
 

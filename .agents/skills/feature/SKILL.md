@@ -8,7 +8,7 @@ Feature a implementar: `[argumentos del usuario]`
 Ejecutá el flujo completo del kit:
 
 0. **Aislamiento**: si no estás en un worktree y `engineering.worktrees = per-feature`, ofrecé crear uno con `/worktree` (skill `worktrees`) antes de codear.
-1. **Spec**: si no existe, agregá la feature a `docs/prd.md` con criterios de aceptación `Dado/Cuando/Entonces` y su contrato técnico (endpoints/actions, modelo de datos, adapter si aplica).
+1. **Spec**: si no existe, creá `docs/specs/<slug>.md` (plantilla `kit/docs-template/specs/_template.md`) con criterios `Dado/Cuando/Entonces` y contrato técnico, y agregá su fila al índice en `docs/prd.md`.
 2. **Plan**: si hay decisiones técnicas relevantes, delegá al subagente `@architect` y registrá el ADR si corresponde. Cargá los skills del kit que apliquen.
 3. **Implementación**: implementá respetando `nextjs-conventions`, `react-conventions`, `typescript-conventions`, `api-design`, `data-postgres`, `security`.
 4. **Verificación en paralelo**: cargá `parallel-work` y lanzá en paralelo (máx `engineering.parallelism`, default 3): `@qa-tester` (tests por criterio de aceptación), `@code-reviewer` (código), `@ui-reviewer` (si cambió UI) y `@product-reviewer` (producto). Consolidá en un veredicto y aplicá los cambios.

@@ -1,6 +1,6 @@
 ---
 name: prd-writer
-description: Escribe y mantiene PRDs del kit con criterios de aceptacion Given/When/Then, contrato tecnico y alcance explicito. Usalo al definir una feature, escribir una spec, derivar criterios de aceptacion o actualizar docs/prd.md.
+description: Escribe specs de feature del kit (una por feature en docs/specs/) con criterios de aceptacion Given/When/Then, contrato tecnico y alcance explicito, y mantiene el indice en docs/prd.md. Usalo al definir una feature, escribir una spec, derivar criterios de aceptacion o actualizar el indice de features.
 license: MIT
 compatibility: opencode
 metadata:
@@ -8,50 +8,38 @@ metadata:
   flujo: sdd-light+bdd-criteria
 ---
 
-# PRD — cómo escribirlo
+# Spec de feature — cómo escribirla
 
-## Estructura por feature
+## Dónde va
 
-```
-## Feature: <nombre>
+- Una **spec por feature** en `docs/specs/<feature>.md` (plantilla `kit/docs-template/specs/_template.md`).
+- `docs/prd.md` es el **índice**: alcance del MVP + tabla de features que linkea a cada spec.
 
-### Contexto
-Por qué existe, para quién y qué resultado busca.
+## Estructura de la spec
 
-### Criterios de aceptación
-Dado <contexto>
-Cuando <acción>
-Entonces <resultado observable>
-
-### Contrato técnico
-- Server Action / endpoint:
-- Modelo de datos:
-- Adapter involucrado:
-- Eventos de analytics:
-
-### Fuera de alcance
-Lo que explícitamente NO entra.
-
-### Tests derivados
-Unit / Component / E2E (@critical o @full)
-```
+- **Contexto**: por qué existe, para quién y qué resultado busca (link al roadmap).
+- **Criterios de aceptación**: `Dado/Cuando/Entonces` (uno por criterio).
+- **Contrato técnico**: Server Action / endpoint, modelo de datos, adapter, eventos de analytics.
+- **Fuera de alcance**.
+- **Tests derivados**: unit / component / E2E (`@critical` o `@full`).
 
 ## Reglas
 
 - **Un criterio = un test.** Si no se puede testear, el criterio está mal escrito.
 - El criterio describe **comportamiento observable**, no implementación.
-- Un PRD por feature; corto (una página). Los detalles técnicos van al ADR.
-- Todo input externo listado en el contrato se valida con Zod (ver skill `api-design`).
-- Incluí siempre el estado vacío/error/carga cuando la feature muestra datos (ver `styling-ui`).
-- Marcá dependencias entre features y qué bloquea a qué.
+- Una spec corta (una página). Los detalles de arquitectura van al ADR.
+- Todo input externo se valida con el validador del kit (`engineering.validation`, default Zod).
+- Incluí estados vacío/error/carga cuando la feature muestra datos (ver `styling-ui`).
+- Al crear una spec, agregá su fila al índice en `docs/prd.md`.
 
 ## Antipatrones
 
 - Criterios vagos ("funciona bien", "es rápido").
 - Features sin resultado de negocio ni métrica.
-- PRD que dicta la implementación en lugar del comportamiento.
+- Spec que dicta la implementación en lugar del comportamiento.
 - Alcance sin "fuera de alcance".
+- Todas las features en `prd.md` (debe ser un índice, no una colección).
 
 ## Salida
 
-`docs/prd.md` actualizado, backlog RICE en `docs/roadmap.md`, y los skills aplicables por feature.
+`docs/specs/<feature>.md` + fila en el índice de `docs/prd.md` + backlog RICE en `docs/roadmap.md`.

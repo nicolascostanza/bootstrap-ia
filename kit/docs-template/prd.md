@@ -1,51 +1,21 @@
 # PRD — [PENDIENTE: nombre]
 
-> Spec-driven: cada feature se define antes de implementarse, con criterios Given/When/Then.
+> Índice de features y alcance del MVP. El detalle de cada feature vive en `specs/<feature>.md`.
+
+## Hipótesis principal del MVP
+
+Una sola hipótesis falsable (ver `vision.md` y `validation.md`).
 
 ## Alcance del MVP
 
-Lista corta de capacidades mínimas para validar la hipótesis principal.
+Capacidades mínimas para validar la hipótesis.
 
-## Feature: [nombre]
+## Índice de features
 
-### Contexto
+| Feature | Spec | Estado | Métrica |
+|---|---|---|---|
+| [PENDIENTE] | [specs/<feature>.md](./specs/<feature>.md) | [PENDIENTE] | [PENDIENTE] |
 
-Por qué existe y para quién.
+## Fuera de alcance (MVP)
 
-### Criterios de aceptación
-
-```
-Dado [contexto]
-Cuando [acción]
-Entonces [resultado observable]
-```
-
-### Contrato técnico
-
-- Endpoints / Server Actions:
-- Modelo de datos:
-- Adapter involucrado (si aplica):
-
-### Tests derivados
-
-- Unit (dominio):
-- Component (RTL):
-- E2E (`@critical` / `@full`):
-
----
-
-## Feature: [nombre]
-
-### Contexto
-
-### Criterios de aceptación
-
-```
-Dado
-Cuando
-Entonces
-```
-
-### Contrato técnico
-
-### Tests derivados
+Lo que explícitamente NO entra en esta iteración.

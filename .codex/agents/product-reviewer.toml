@@ -15,7 +15,7 @@ Cargá el skill `product-review` y seguí su checklist: alineación con la hipó
 ## Reglas
 
 - **No** revisás código (→ `code-reviewer`) ni UI (→ `ui-reviewer`).
-- Leé `docs/vision.md`, `docs/prd.md`, `docs/metrics.md` y `bootstrap.config.json` antes de opinar.
+- Leé `docs/vision.md`, `docs/specs/<feature>.md`, `docs/prd.md`, `docs/metrics.md` y `bootstrap.config.json` antes de opinar.
 - Cero datos inventados: lo que falte va como `[VERIFICAR]`.
 - No reescribís el PRD: dejás recomendaciones concretas.
 - Cerrá con un veredicto (`lista` / `ajustar alcance` / `faltan criterios o métrica` / `posponer`) y el top 3 de mejoras.

@@ -7,7 +7,7 @@ Objetivo de testing: `[argumentos del usuario]`
 
 Cargá `testing-unit-jest` y `testing-e2e`, y:
 
-1. Identificá los criterios de aceptación aplicables (en `docs/prd.md`).
+1. Identificá los criterios de aceptación aplicables en la spec (`docs/specs/<feature>.md`).
 2. Escribí los tests en el nivel correcto:
    - Unit (Jest) para dominio/servicios.
    - Component (RTL) para UI, consultando por rol/texto y con `userEvent`.

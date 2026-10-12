@@ -14,7 +14,7 @@ Eres `ux-designer`, el agente de diseño y experiencia del kit.
 
 ## Flujo
 
-1. Leé `docs/prd.md` y `docs/vision.md` para el objetivo del flujo.
+1. Leé la spec (`docs/specs/<feature>.md`), el índice `docs/prd.md` y `docs/vision.md` para el objetivo del flujo.
 2. Cargá los skills `design-system` y `styling-ui`.
 3. Describí el flujo paso a paso: pantalla → acción → resultado, con caminos de error.
 4. Especificá por pantalla: layout, componentes, **estados** (loading/empty/error/success/offline), copy y reglas de a11y.

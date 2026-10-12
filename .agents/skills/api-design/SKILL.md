@@ -49,7 +49,7 @@ metadata:
 ## Cómo afecta al scaffold
 
 - Crea `lib/http.ts` (helpers de respuesta), `lib/rate-limit.ts` y un ejemplo de action + handler.
-- `docs/prd.md` documenta el contrato por feature.
+- La spec (`docs/specs/<feature>.md`) documenta el contrato por feature.
 
 ## Checklist
 

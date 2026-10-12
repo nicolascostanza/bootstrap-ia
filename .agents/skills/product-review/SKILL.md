@@ -22,7 +22,7 @@ Revisa que una feature sea la **correcta de producto**, no solo que esté bien h
 1. **Alineación**: ¿sirve a la hipótesis/visión (`docs/vision.md`) y al ICP? ¿Es scope creep?
 2. **Job-to-be-done**: ¿resuelve un job real? ¿el resultado es observable por el usuario?
 3. **Alcance**: ¿demasiado grande o chico? ¿se puede cortar a la mitad y seguir valiendo?
-4. **Criterios de aceptación**: ¿existen en `docs/prd.md` y son testeables?
+4. **Criterios de aceptación**: ¿existen en `docs/specs/<feature>.md` y son testeables?
 5. **Métrica/activación**: ¿el evento está instrumentado (ver `metrics-activation`)? ¿mueve la métrica norte o un peldaño del funnel?
 6. **Estados de producto**: primer valor, camino de error de negocio, bordes.
 7. **Bordes de negocio**: legal/privacidad (`legal-docs`), costo (`finops-guardrails`), carga de soporte.

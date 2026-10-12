@@ -24,6 +24,11 @@ Estas reglas aplican a todo el trabajo en este repositorio y a los proyectos que
 - Convenciones de nombres en inglés para código; documentación y UI en español salvo indicación contraria.
 - Referenciá código como `ruta/archivo.ts:línea` en las explicaciones.
 
+## Estructura
+
+- Seguí el árbol canónico del skill `project-structure`. Las specs van en `docs/specs/<feature>.md` (una por feature); `docs/prd.md` es el índice.
+- Ubicaciones fijas (no mover): `.claude/`, `.codex/`, `.agents/`, `AGENTS.md`, `CLAUDE.md`, `.worktrees/`.
+
 ## Seguridad
 
 - Secretos solo en `.env` (nunca commiteados). En configs usá `{env:VAR}`.

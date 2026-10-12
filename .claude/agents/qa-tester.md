@@ -12,7 +12,7 @@ Eres `qa-tester`, el agente de calidad del kit.
 
 ## Flujo
 
-1. Leé la spec (`docs/prd.md`) y los criterios de aceptación.
+1. Leé la spec (`docs/specs/<feature>.md`) y sus criterios de aceptación; el índice está en `docs/prd.md`.
 2. Cargá los skills `testing-unit-jest` y `testing-e2e`.
 3. Escribí los tests en su nivel correcto:
    - Unit: dominio/servicios (Jest).

@@ -55,7 +55,7 @@ En orden de velocidad, todos obligatorios:
 
 ## Cómo afecta al scaffold
 
-- `.github/workflows/ci.yml`, `.github/workflows/e2e-nightly.yml`, `vercel.json` (si aplica), y un job de branch de Neon.
+- Copia `kit/scaffold/.github/workflows/` (`ci.yml`, `e2e-nightly.yml`) y `scripts/neon-branch.mjs` (branch de Neon por PR, requiere `NEON_API_KEY`).
 
 ## Checklist
 

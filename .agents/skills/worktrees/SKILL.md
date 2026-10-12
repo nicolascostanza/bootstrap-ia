@@ -47,6 +47,7 @@ GIT_COMMON=$(git rev-parse --git-common-dir)
 ## Reglas
 
 - Una feature = un worktree = una branch = un PR.
+- La branch la crea el worktree; `/feature` usa la branch actual (no crea otra).
 - **DB compartida**: no corras migraciones en dos worktrees a la vez (se pisan).
 - No crees worktrees anidados.
 - `main` siempre limpio y desplegable.

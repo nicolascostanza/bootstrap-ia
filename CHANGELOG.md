@@ -23,6 +23,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **Landing con scroll**: skill `scroll-landing` + comando `/landing` (track propio), helper `kit/dev/frames.mjs` (video → frames WebP con ffmpeg) y plantillas `kit/scaffold/landing/` (motor de image-sequence vanilla + componente Next + demo).
 - **Video gratis**: `scroll-landing/references/free-video.md` (stock / AI gratis con first/last-frame / local) con licencias y recomendación por caso.
 - **E2E headless**: `testing.e2eHeadless` + `testing.e2eOnFailure` (default headless, artefactos en fallo); skill `testing-e2e` con sección de navegador y scripts de debug.
+- **Git flow completo**: templates `kit/scaffold/.github/` (PR template + `ci.yml` + `e2e-nightly.yml`), `CONTRIBUTING.md`, y `kit/dev/neon-branch.mjs` (branch de Neon por PR).
 
 ### Cambiado
 
@@ -32,6 +33,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - `/feature` cierra con evidencia mostrada (`verification-before-completion`).
 - `bootstrap.config.json`: `product.brainstorm = guided+adversarial`.
 - `sync.mjs`: si un comando colisiona con un skill del mismo nombre, gana el skill.
+- `git-flow` y `ci-cd` documentan branch protection (`gh api`) y release/versionado; `/feature` usa la branch del worktree y crea el PR con `gh pr create`; `/release` sube `package.json.version`.
 - `/feature` ofrece crear el worktree antes de codear; scaffold deja el `dev` script con `--port ${PORT:-3000}`, copia `scripts/ports.mjs` y agrega `.worktrees/` al `.gitignore`.
 - `/feature` cierra sugiriendo `/product-review`.
 - `/review`, `/feature` y `/brainstorm` ahora lanzan sus subagentes en **paralelo** y consolidan; `bootstrap.config.json` agrega `engineering.parallelism` (3).

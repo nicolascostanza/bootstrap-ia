@@ -82,10 +82,11 @@ Completá las env en `.env` (nunca commitear).
 - En `playwright.config.ts`: `headless: true` y artefactos en fallo (`trace: "retain-on-failure"`, `screenshot: "only-on-failure"`, `video: "retain-on-failure"`). Scripts: `test:e2e`, `test:e2e:headed`, `test:e2e:ui`, `e2e:report`.
 - Verificá: `pnpm test` y `pnpm test:e2e` (al menos `@critical`).
 
-## Paso 7 — CI
+## Paso 7 — CI, git y plantillas
 
-- Copiá `.github/workflows/ci.yml` (lint → typecheck → test → build → e2e @critical).
-- Configurá la branch de Neon por PR.
+- Copiá a la raíz: `.github/` (PR template + workflows `ci.yml` y `e2e-nightly.yml`) y `CONTRIBUTING.md` desde `kit/scaffold/`.
+- Copiá `kit/dev/neon-branch.mjs` → `scripts/neon-branch.mjs` (branch de Neon por PR; requiere `NEON_API_KEY`).
+- Configurá la branch protection de `main` (ver skill `git-flow`).
 
 ## Paso 8 — Verificación final
 

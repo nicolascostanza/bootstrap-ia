@@ -26,6 +26,7 @@ metadata:
 - Cortas: máximo ~2 días de vida. Si es más grande, dividir.
 - Nunca commitear directo a `main`.
 - Cada feature nace en su propio worktree (`/worktree`), en `.worktrees/` (gitignoreado).
+- La branch la crea el worktree (o la creás al empezar). Si ya estás en una branch, **usala**; no crees otra.
 
 ### Commits (Conventional Commits)
 
@@ -36,6 +37,7 @@ metadata:
 
 ### PRs
 
+- Creá el PR: `gh pr create --base main --fill` (usa `pull_request_template.md`).
 - Título y descripción claros: qué, por qué, cómo probar.
 - Checklist del PR template: tests, cobertura, a11y, build.
 - PRs chicos (< 400 líneas de diff si es posible) para revisar rápido.
@@ -48,9 +50,33 @@ metadata:
 - Comentarios accionables; el autor resuelve y re-pide review.
 - No mergear con checks en rojo ni conflictos.
 
+### Ramas protegidas
+
+Configurá `main` una vez (sin push directo, checks requeridos, 1 review):
+
+```bash
+gh api -X PUT repos/OWNER/REPO/branches/main/protection --input protection.json
+```
+
+`protection.json`:
+
+```json
+{
+  "required_status_checks": { "strict": true, "contexts": ["ci"] },
+  "enforce_admins": false,
+  "required_pull_request_reviews": { "required_approving_review_count": 1 },
+  "restrictions": null
+}
+```
+
+### Release y versionado
+
+- `package.json.version` es la fuente de verdad (SemVer).
+- `CHANGELOG.md` se arma desde los commits convencionales; tag `vX.Y.Z` en `main`.
+
 ## Cómo afecta al scaffold
 
-- `.github/pull_request_template.md` y `CONTRIBUTING.md` con estas reglas.
+- Copia `kit/scaffold/.github/` (`pull_request_template.md`, `workflows/ci.yml`, `workflows/e2e-nightly.yml`) y `kit/scaffold/CONTRIBUTING.md`.
 
 ## Checklist
 

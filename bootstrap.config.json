@@ -19,7 +19,7 @@
     "lint": "eslint+prettier",
     "validation": "zod",
     "accessibility": "wcag-aa",
-    "git": "github-flow+conventional-commits",
+    "git": "git-flow+conventional-commits",
     "worktrees": "per-feature",
     "ports": "deterministic",
     "portsBase": 3000,

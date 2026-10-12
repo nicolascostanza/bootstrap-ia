@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: JSON valido
+        run: node -e "for (const f of ['opencode.json','bootstrap.config.json']) JSON.parse(require('fs').readFileSync(f,'utf8')); console.log('JSON OK')"
+      - name: Sync multi-tool sin drift
+        run: node kit/sync/sync.mjs --target . --check

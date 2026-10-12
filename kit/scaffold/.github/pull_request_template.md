@@ -1,6 +1,6 @@
 ## Qué
 
-<!-- Qué cambia y por qué -->
+<!-- Qué cambia y por qué. Base: develop (features/fixes) o main (release/hotfix). -->
 
 ## Cómo probar
 

@@ -1,86 +1,91 @@
 ---
 name: git-flow
-description: Estandares de Git del kit (GitHub Flow, ramas cortas, Conventional Commits, PR template, review). Usalo al crear ramas, commitear, abrir PRs, resolver conflictos o definir el flujo de trabajo del repositorio.
+description: Estandares de Git del kit con Git Flow (develop como integracion, release/* hacia main, hotfix desde main), ramas cortas, Conventional Commits, PR template y review. Usalo al crear ramas, commitear, abrir PRs, preparar releases, resolver hotfixes o definir el flujo del repositorio.
 license: MIT
 compatibility: opencode
 metadata:
   bloque: B2
-  default: github-flow+conventional-commits
-  alternativas: git-flow-clasico, trunk-based
+  default: git-flow+conventional-commits
+  alternativas: github-flow, trunk-based
 ---
 
-# Git — convenciones
+# Git — convenciones (Git Flow)
 
 ## Default y alternativas
 
-- **Default**: GitHub Flow — ramas cortas desde `main`, PR con checks verdes, squash merge.
-- Alternativas: Git Flow clásico (equipos grandes), trunk-based (feature flags).
+- **Default**: Git Flow — `develop` integra, `release/*` va a `main`, `hotfix/*` sale de `main`.
+- Alternativas: GitHub Flow (ramas cortas directo a main), trunk-based (feature flags).
 - Configurable en `bootstrap.config.json` → `engineering.git`.
 
-## Reglas
+## Ramas
 
-### Ramas
+- **`main`**: producción. Solo recibe **releases** y **hotfixes**. Siempre desplegable.
+- **`develop`**: integración. Recibe features y fixes. Es la base de trabajo.
+- **`feat/<slug>`** y **`fix/<slug>`**: nacen de **`develop`** y vuelven a **`develop`** (PR).
+- **`release/<X.Y.Z>`**: nace de **`develop`** → PR a **`main`** → back-merge a **`develop`**.
+- **`hotfix/<slug>`**: nace de **`main`** → PR a **`main`** → back-merge a **`develop`**.
+- Cortas (≤ ~2 días). Nunca commitear directo a `main` ni a `develop`.
+- Cada feature nace en su worktree (`/worktree`), que crea la branch desde `develop`.
 
-- `main` siempre desplegable.
-- Formato: `<tipo>/<descripcion-corta>` — `feat/checkout`, `fix/login-google`, `chore/upgrade-deps`.
-- Cortas: máximo ~2 días de vida. Si es más grande, dividir.
-- Nunca commitear directo a `main`.
-- Cada feature nace en su propio worktree (`/worktree`), en `.worktrees/` (gitignoreado).
-- La branch la crea el worktree (o la creás al empezar). Si ya estás en una branch, **usala**; no crees otra.
-
-### Commits (Conventional Commits)
+## Commits (Conventional Commits)
 
 - Formato: `tipo(alcance): descripción` en imperativo y minúscula.
 - Tipos: `feat`, `fix`, `chore`, `docs`, `test`, `refactor`, `perf`, `build`, `ci`.
-- Ejemplo: `feat(auth): agregar login con Google`.
-- Un commit = un cambio lógico. Sin commits "wip" en el PR final (se squashea).
+- Un commit = un cambio lógico. Sin "wip" en el PR final.
 
-### PRs
+## PRs
 
-- Creá el PR: `gh pr create --base main --fill` (usa `pull_request_template.md`).
+- Creá el PR con la **base correcta**: `gh pr create --base develop` (features/fixes) o `--base main` (release/hotfix).
 - Título y descripción claros: qué, por qué, cómo probar.
-- Checklist del PR template: tests, cobertura, a11y, build.
-- PRs chicos (< 400 líneas de diff si es posible) para revisar rápido.
-- Rebase/merge de `main` antes de pedir review.
-- Squash merge a `main`; borrar la rama al mergear.
+- PRs chicos (< 400 líneas de diff). Rebase de la base antes de pedir review.
+- Checks verdes (lint, typecheck, test + cobertura, build, e2e `@critical`, a11y).
+- **Squash merge**; borrar la rama al mergear.
+- Tras mergear una `release/*` a `main`: **back-merge** a `develop`.
 
-### Review
+## Review
 
 - Al menos 1 aprobación (o el agente `code-reviewer` en trabajo en solitario).
 - Comentarios accionables; el autor resuelve y re-pide review.
 - No mergear con checks en rojo ni conflictos.
 
-### Ramas protegidas
+## Ramas protegidas
 
-Configurá `main` una vez (sin push directo, checks requeridos, 1 review):
+Protegé `main` y `develop` (sin push directo, PR + 1 review, sin force-push):
 
 ```bash
 gh api -X PUT repos/OWNER/REPO/branches/main/protection --input protection.json
+gh api -X PUT repos/OWNER/REPO/branches/develop/protection --input protection.json
 ```
 
 `protection.json`:
 
 ```json
 {
-  "required_status_checks": { "strict": true, "contexts": ["ci"] },
+  "required_status_checks": null,
   "enforce_admins": false,
   "required_pull_request_reviews": { "required_approving_review_count": 1 },
-  "restrictions": null
+  "restrictions": null,
+  "allow_force_pushes": false,
+  "allow_deletions": false
 }
 ```
 
-### Release y versionado
+Con `enforce_admins: false`, el dueño (admin) puede mergear en solitario sin quedar bloqueado. Cuando haya CI, agregá `required_status_checks` con el nombre del check.
+
+## Release y versionado
 
 - `package.json.version` es la fuente de verdad (SemVer).
 - `CHANGELOG.md` se arma desde los commits convencionales; tag `vX.Y.Z` en `main`.
+- Flujo: `release/X.Y.Z` desde `develop` → PR a `main` → tag → back-merge a `develop`.
 
 ## Cómo afecta al scaffold
 
 - Copia `kit/scaffold/.github/` (`pull_request_template.md`, `workflows/ci.yml`, `workflows/e2e-nightly.yml`) y `kit/scaffold/CONTRIBUTING.md`.
+- Crea la branch `develop` además de `main`.
 
 ## Checklist
 
-- [ ] Rama con formato correcto y corta.
+- [ ] Rama con formato correcto y basada en `develop` (o `main` para hotfix).
 - [ ] Commits convencionales.
 - [ ] Sin secretos ni archivos generados.
-- [ ] Checks verdes antes del merge.
+- [ ] Checks verdes y PR a la base correcta.

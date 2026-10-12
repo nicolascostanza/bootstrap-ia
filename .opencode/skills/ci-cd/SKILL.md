@@ -39,7 +39,8 @@ En orden de velocidad, todos obligatorios:
 
 ### Branch protection
 
-- `main` protegida: no push directo, checks requeridos, 1 review.
+- **`main` y `develop`** protegidas: no push directo, PR + 1 review, sin force-push.
+- `develop` integra (features y fixes); `main` recibe releases y hotfixes.
 - Historial lineal (squash).
 
 ### Secretos en CI

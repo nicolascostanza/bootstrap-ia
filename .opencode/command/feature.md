@@ -12,7 +12,7 @@ Ejecutá el flujo completo del kit:
 2. **Plan**: si hay decisiones técnicas relevantes, delegá al subagente `@architect` y registrá el ADR si corresponde. Cargá los skills del kit que apliquen.
 3. **Implementación**: implementá respetando `nextjs-conventions`, `react-conventions`, `typescript-conventions`, `api-design`, `data-postgres`, `security`.
 4. **Verificación en paralelo**: cargá `parallel-work` y lanzá en paralelo (máx `engineering.parallelism`, default 3): `@qa-tester` (tests por criterio de aceptación), `@code-reviewer` (código), `@ui-reviewer` (si cambió UI) y `@product-reviewer` (producto). Consolidá en un veredicto y aplicá los cambios.
-5. **Git**: si ya estás en una branch de worktree, usala; si no, creá `feat/<slug>` desde `main`. Conventional Commits y PR con `gh pr create --base main --fill`.
+5. **Git**: si ya estás en una branch de worktree, usala; si no, creá `feat/<slug>` desde `develop`. Conventional Commits y PR con `gh pr create --base develop --fill`.
 6. **Cierre**: cargá `verification-before-completion` y mostrá la evidencia (`lint` + `typecheck` + `test` + `build`, comando y salida). Actualizá `PROJECT_STATE.md`.
 
 No mergees sin aprobación del usuario. Reportá al final: qué se hizo, archivos clave, resultado de tests y próximo paso.

@@ -18,7 +18,7 @@ Cada feature o sesión corre en su **propio worktree**: se paraleliza sin romper
 
 1. **Detectar aislamiento**: si `GIT_DIR != GIT_COMMON` (y no es submódulo), ya estás en un worktree → no crear otro.
 2. **Nativo**: dentro de Orca (hay variables `ORCA_*` en el entorno) usá `orca`; si el harness expone un tool/plugin de worktree (opencode), usalo.
-3. **Fallback git**: `git worktree add .worktrees/<branch> -b <branch>`.
+3. **Fallback git**: `git worktree add .worktrees/<branch> -b <branch> origin/develop` (la feature nace de `develop`).
 
 ## Pasos
 

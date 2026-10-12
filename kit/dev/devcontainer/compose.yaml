@@ -1,0 +1,10 @@
+services:
+  app:
+    image: mcr.microsoft.com/devcontainers/typescript-node:22
+    volumes:
+      - ..:/workspace:cached
+      - node_modules:/workspace/node_modules
+    command: sleep infinity
+
+volumes:
+  node_modules:

@@ -42,6 +42,7 @@ GIT_COMMON=$(git rev-parse --git-common-dir)
 - Determinístico por worktree (`scripts/ports.mjs`): el mismo worktree siempre obtiene el mismo puerto, estable entre reinicios.
 - Multi-servicio (futuro split front/back): `node scripts/ports.mjs --count 2 --write` deriva `base+0` web y `base+1` api.
 - Cableá el `dev` script una vez: `"dev": "next dev --port ${PORT:-3000}"`.
+- Cross-platform: ver el skill `dev-environment` (LF, WSL2, ARM64). En modo `devcontainer`, cada worktree abre su propio contenedor y los puertos se forwardean.
 
 ## Reglas
 

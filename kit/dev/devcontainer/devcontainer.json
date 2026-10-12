@@ -1,0 +1,22 @@
+{
+  "name": "app-dev",
+  "dockerComposeFile": "compose.yaml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3000],
+  "remoteEnv": {
+    "PORT": "3000",
+    "NODE_ENV": "development"
+  },
+  "postCreateCommand": "corepack enable && pnpm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-playwright.playwright"
+      ]
+    }
+  }
+}

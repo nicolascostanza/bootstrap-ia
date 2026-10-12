@@ -67,6 +67,7 @@ Copiá desde `kit/scaffold/` (global: `~/.config/opencode/kit/scaffold/`):
 - `lib/env.ts`, `lib/errors.ts`, `lib/logger.ts`, `lib/http.ts`
 - `lib/adapters/email.ts` (implementación de referencia del patrón adapter)
 - `scripts/ports.mjs` (copiá `kit/dev/ports.mjs`)
+- Si `engineering.devEnv` es `devcontainer`, copiá `kit/dev/devcontainer/` a `.devcontainer/`
 
 En `package.json`, dejá el `dev` script como `"dev": "next dev --port ${PORT:-3000}"`. Agregá `.worktrees/` a `.gitignore`.
 

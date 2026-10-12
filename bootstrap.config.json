@@ -25,6 +25,7 @@
     "portsBase": 3000,
     "portsRange": 999,
     "dbPerWorktree": false,
+    "devEnv": "native",
     "layout": "single-nextjs",
     "backendHost": "render"
   },

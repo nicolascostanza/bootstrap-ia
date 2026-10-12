@@ -16,6 +16,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - Plantilla `kit/docs-template/idea.md`.
 - **`/worktree` + skill `worktrees`**: aislamiento por feature con herramientas nativas (Orca/opencode) y `git worktree` como fallback.
 - **`kit/dev/ports.mjs`**: puertos determinísticos por worktree (FNV-1a + probing), con `--write`, `--list`, `--count`.
+- **Skill `dev-environment`** (opt-in): nativo vs devcontainer vs compose-only, con plantillas `.devcontainer/` (app + servicios opcionales) y checklist cross-platform.
 
 ### Cambiado
 
@@ -26,7 +27,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - `bootstrap.config.json`: `product.brainstorm = guided+adversarial`.
 - `sync.mjs`: si un comando colisiona con un skill del mismo nombre, gana el skill.
 - `/feature` ofrece crear el worktree antes de codear; scaffold deja el `dev` script con `--port ${PORT:-3000}`, copia `scripts/ports.mjs` y agrega `.worktrees/` al `.gitignore`.
-- `bootstrap.config.json`: `engineering.worktrees`, `ports`, `portsBase`, `portsRange`, `dbPerWorktree`.
+- `bootstrap.config.json`: `engineering.worktrees`, `ports`, `portsBase`, `portsRange`, `dbPerWorktree`, `devEnv`.
 
 ## [0.1.0] - 2026-10-10
 

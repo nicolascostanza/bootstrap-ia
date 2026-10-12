@@ -36,6 +36,7 @@
 - [x] Soporte multi-tool: `kit/sync/sync.mjs` + `kit/config/mcp.json` (Claude Code y Codex, a nivel proyecto).
 - [x] Refinamiento: `/brainstorm` (red-team con `skeptic`, benchmarks, scorecard, `docs/idea.md`) y `verification-before-completion`.
 - [x] Worktrees: `/worktree` + skill `worktrees` (nativo Orca/opencode → git fallback) y `kit/dev/ports.mjs` (puertos determinísticos).
+- [x] Entorno de dev: skill `dev-environment` (nativo/devcontainer/compose-only, opt-in) + plantillas `kit/dev/devcontainer/` y checklist cross-platform.
 
 ## Decisiones clave
 

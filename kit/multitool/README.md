@@ -43,6 +43,18 @@ Con instalación global, usá `node ~/.config/opencode/kit/sync/sync.mjs --targe
 - **Claude Code**: `founder` es un subagent; podés fijarlo como sesión con `claude --agent founder`. No se usan agent teams (experimental).
 - **Codex**: `founder` está en `.codex/agents/founder.toml`; Codex spawnea subagentes cuando se lo pedís y lee `AGENTS.md`. Los flujos se invocan con `$new-startup`, `$scaffold`, etc.
 
+## Paralelismo y multi-harness
+
+El skill `parallel-work` define **cuándo y cómo** paralelizar o mandar a background (fan-out de reviews, tests, recon) de forma portable. Mecanismo por harness:
+
+- **opencode** — v1: tool `task` (bloqueante); v2: tool `subagent` en background + Code Mode (`Promise.all`).
+- **Claude Code** — subagents en background (default), agent view (`claude agents`), `/batch`.
+- **Codex** — subagents (default), custom agents.
+
+Cap por defecto: `engineering.parallelism` (3). Detección de harness: `node kit/dev/harness.mjs`.
+
+Para correr **distintos harness a la vez** (opencode + Claude + Codex) en paralelo, usá **Orca**: un worktree por harness/sesión (Orca gestiona worktrees y puede lanzar codex/claude en cada uno). Es el integrador cross-harness; el kit no lo reimplementa.
+
 ## Caveats
 
 - **Duplicado lógico en opencode**: opencode también lee `.claude/skills` y `.agents/skills`. Como el contenido es **idéntico** (generado), no cambia el comportamiento, pero un skill puede aparecer una sola vez. Si molesta, borrá `.claude/skills` o `.agents/skills` (perdés esa herramienta).

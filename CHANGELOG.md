@@ -18,6 +18,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **`kit/dev/ports.mjs`**: puertos determinísticos por worktree (FNV-1a + probing), con `--write`, `--list`, `--count`.
 - **Skill `dev-environment`** (opt-in): nativo vs devcontainer vs compose-only, con plantillas `.devcontainer/` (app + servicios opcionales) y checklist cross-platform.
 - **Product review**: skill `product-review` + subagente `product-reviewer` + comando `/product-review` (feedback de producto sobre una feature ya hecha).
+- **Paralelismo**: skill `parallel-work` (fan-out portable: review, tests, recon) + helper `kit/dev/harness.mjs` (detecta harness y capacidades).
 
 ### Cambiado
 
@@ -29,6 +30,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - `sync.mjs`: si un comando colisiona con un skill del mismo nombre, gana el skill.
 - `/feature` ofrece crear el worktree antes de codear; scaffold deja el `dev` script con `--port ${PORT:-3000}`, copia `scripts/ports.mjs` y agrega `.worktrees/` al `.gitignore`.
 - `/feature` cierra sugiriendo `/product-review`.
+- `/review`, `/feature` y `/brainstorm` ahora lanzan sus subagentes en **paralelo** y consolidan; `bootstrap.config.json` agrega `engineering.parallelism` (3).
 - `bootstrap.config.json`: `engineering.worktrees`, `ports`, `portsBase`, `portsRange`, `dbPerWorktree`, `devEnv`.
 
 ## [0.1.0] - 2026-10-10

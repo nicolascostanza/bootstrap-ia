@@ -38,6 +38,7 @@
 - [x] Worktrees: `/worktree` + skill `worktrees` (nativo Orca/opencode → git fallback) y `kit/dev/ports.mjs` (puertos determinísticos).
 - [x] Entorno de dev: skill `dev-environment` (nativo/devcontainer/compose-only, opt-in) + plantillas `kit/dev/devcontainer/` y checklist cross-platform.
 - [x] Product review: skill `product-review` + `product-reviewer` + `/product-review` (capa de producto que faltaba).
+- [x] Paralelismo: skill `parallel-work` + `kit/dev/harness.mjs`; `/review`, `/feature` y `/brainstorm` hacen fan-out y consolidan.
 
 ## Decisiones clave
 

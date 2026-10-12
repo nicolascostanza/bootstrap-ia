@@ -1,10 +1,17 @@
 ---
-description: Revisa el codigo actual (o de un PR) contra los estandares del kit sin modificarlo.
-agent: code-reviewer
+description: Revisa cambios en paralelo por capa (codigo, UI, producto, seguridad) y consolida el veredicto.
+agent: founder
 ---
 
-Alcance de la revisión: `$ARGUMENTS`
+Alcance: `$ARGUMENTS`
 
-Si el alcance está vacío, revisá los cambios sin commitear y el diff contra `main` (`git diff main...HEAD`, `git status`).
+Si está vacío, revisá los cambios sin commitear y el diff contra `main` (`git diff main...HEAD`, `git status`).
 
-Cargá los skills técnicos que apliquen y revisá: corrección, estándares, seguridad, tests, simplicidad y performance. Reportá por severidad (`bloqueante` / `importante` / `menor`) con ubicación `ruta/archivo.ts:línea`, problema y sugerencia concreta. Cerrá con veredicto y top 3.
+Cargá el skill `parallel-work` y lanzá en paralelo (máx `engineering.parallelism`, default 3):
+
+- `code-reviewer` (siempre)
+- `ui-reviewer` (si cambió UI)
+- `product-reviewer` (si es una feature)
+- `security-auditor` (si toca auth, pagos, datos o endpoints)
+
+Consolidá en un **veredicto único**: bloqueantes primero, top-3 por severidad y próximos pasos. No pegues los reportes crudos.

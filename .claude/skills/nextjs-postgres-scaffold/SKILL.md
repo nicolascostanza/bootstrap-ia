@@ -79,6 +79,7 @@ Completá las env en `.env` (nunca commitear).
 - Jest: `pnpm add -D jest @types/jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom @testing-library/user-event msw jest-axe @next/jest`
 - Playwright: `pnpm create playwright` y `pnpm add -D @axe-core/playwright`
 - Configurá cobertura (90% dominio, ratchet), MSW handlers y un test de humo por capa.
+- En `playwright.config.ts`: `headless: true` y artefactos en fallo (`trace: "retain-on-failure"`, `screenshot: "only-on-failure"`, `video: "retain-on-failure"`). Scripts: `test:e2e`, `test:e2e:headed`, `test:e2e:ui`, `e2e:report`.
 - Verificá: `pnpm test` y `pnpm test:e2e` (al menos `@critical`).
 
 ## Paso 7 — CI

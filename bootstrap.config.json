@@ -61,6 +61,8 @@
       "critical": "on-pr",
       "full": "nightly"
     },
+    "e2eHeadless": true,
+    "e2eOnFailure": "trace",
     "networkMock": "msw",
     "a11y": "axe",
     "mutation": true,

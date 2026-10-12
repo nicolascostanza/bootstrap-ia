@@ -18,6 +18,7 @@ metadata:
   - `@critical`: en cada PR.
   - `@full`: nightly / pre-merge.
 - Correr contra **entorno de preview**, no local.
+- **Headless por defecto** (sin ventana): los tests nunca abren el navegador.
 
 ## Reglas
 
@@ -40,9 +41,16 @@ metadata:
 - **Branch de Neon por PR** como DB de test.
 - Un worker por DB/entorno para evitar colisiones; tests independientes entre sí.
 
+### Navegador (headless)
+
+- **Default `headless: true`**: los tests no abren ventana. Nunca abras el navegador salvo para debug manual.
+- Al fallar, se dejan **artefactos** (no se relanza nada): `trace: "retain-on-failure"`, `screenshot: "only-on-failure"`, `video: "retain-on-failure"`.
+- Debug manual: `pnpm test:e2e:headed` (visible) · `pnpm test:e2e:ui` (UI mode) · `npx playwright show-trace` (abre el trace).
+- **No** se abre el navegador automáticamente al fallar (no estándar y frágil).
+
 ### Estabilidad
 
-- `retries: 1` en CI; `trace: "on-first-retry"`, `video`/screenshot on failure.
+- `retries: 1` en CI; artefactos en fallo: `trace: "retain-on-failure"`, `screenshot: "only-on-failure"`, `video: "retain-on-failure"`.
 - Si un test es flaky, se arregla o se borra. Nunca se lo re-intenta en silencio.
 
 ### CI
@@ -52,11 +60,12 @@ metadata:
 
 ## Cómo afecta al scaffold
 
-- `playwright.config.ts`, carpeta `e2e/`, script `test:e2e:critical` y workflow nightly.
+- `playwright.config.ts` (headless + artefactos), carpeta `e2e/`, scripts `test:e2e` / `test:e2e:headed` / `test:e2e:ui` / `e2e:report` y workflow nightly.
 
 ## Checklist
 
 - [ ] Flujos críticos con `@critical`.
 - [ ] Auth por `storageState`.
 - [ ] Sin sleeps.
+- [ ] Headless por defecto.
 - [ ] Corre contra preview con DB efímera.

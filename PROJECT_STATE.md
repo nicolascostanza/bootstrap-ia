@@ -41,6 +41,7 @@
 - [x] Paralelismo: skill `parallel-work` + `kit/dev/harness.mjs`; `/review`, `/feature` y `/brainstorm` hacen fan-out y consolidan.
 - [x] Estructura: skill `project-structure` (docs híbrido) + specs por feature en `docs/specs/` + índice `docs/README.md`.
 - [x] Landing con scroll: skill `scroll-landing` + `/landing` + `kit/dev/frames.mjs` + `kit/scaffold/landing/` (motor image-sequence gratis) + `references/free-video.md` (stock / AI gratis / local).
+- [x] E2E headless: default headless, artefactos en fallo (`testing.e2eHeadless`, `testing.e2eOnFailure`) y scripts de debug.
 
 ## Decisiones clave
 

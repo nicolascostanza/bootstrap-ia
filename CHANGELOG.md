@@ -22,6 +22,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **Estructura de proyecto**: skill `project-structure`, índice `docs/README.md` y plantilla `docs/specs/_template.md`.
 - **Landing con scroll**: skill `scroll-landing` + comando `/landing` (track propio), helper `kit/dev/frames.mjs` (video → frames WebP con ffmpeg) y plantillas `kit/scaffold/landing/` (motor de image-sequence vanilla + componente Next + demo).
 - **Video gratis**: `scroll-landing/references/free-video.md` (stock / AI gratis con first/last-frame / local) con licencias y recomendación por caso.
+- **E2E headless**: `testing.e2eHeadless` + `testing.e2eOnFailure` (default headless, artefactos en fallo); skill `testing-e2e` con sección de navegador y scripts de debug.
 
 ### Cambiado
 

@@ -59,4 +59,4 @@
 
 - Instalación global: resuelta y probada en Windows; falta validar en macOS (2 máquinas).
 - Rotura por versiones: pendiente estrategia de actualización del kit.
-- Branch protection del repo del kit: **pendiente por plan** (GitHub Free no la habilita en repos privados; requiere Pro o hacer el repo público). El estándar Git Flow ya está en el kit; la barrera es solo el plan.
+- Branch protection del kit: **activa** (repo público). `main` y `develop` con PR + 1 review + check `ci`, sin force-push ni borrado (`enforce_admins: false` para no bloquear al dueño en solitario).

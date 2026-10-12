@@ -15,9 +15,21 @@ metadata:
 
 El efecto es **técnica, no IA**: una sección pinneada dibuja en un canvas el frame que corresponde al scroll. **Es gratis.** Lo único pago es *generar el video con IA*; nosotros usamos video stock o propio.
 
-## Pipeline gratis
+## Cómo conseguir el video (3 caminos)
 
-1. Conseguí un video corto (stock libre o propio). Fuentes: Pexels, Pixabay, Mixkit, Coverr (revisá licencia).
+Default: **stock primero**. Tablas y caveats en `references/free-video.md`.
+
+| Camino | Cuándo | Costo |
+|---|---|---|
+| **Stock** (clip continuo) | Rápido, cero riesgo de licencia | Gratis |
+| **AI gratis** (Hailuo/Kling, i2v + first/last-frame) | Bespoke (dives + conectores) | Gratis (cola/watermark) |
+| **Local** (Wan 2.2 / LTX en ComfyUI) | Sin nube, con GPU | Gratis |
+
+Verificá licencia comercial: Luma y Pika free son **NO comerciales**.
+
+## Pipeline
+
+1. Conseguí el video (stock o generado; ver `references/free-video.md`).
 2. Extraé frames:
    ```bash
    node scripts/frames.mjs --input video.mp4 --out public/sequence --fps 24 --width 1280
@@ -26,7 +38,8 @@ El efecto es **técnica, no IA**: una sección pinneada dibuja en un canvas el f
 4. Verificá build, LCP y `prefers-reduced-motion`.
 
 - **Alternativa sin video**: escena WebGL (Three.js) con assets CC0.
-- **Multi-clip con vuelo continuo** (escenas AI + camera flights): ver `kit/scaffold/landing/vendor/README.md` — es pago y opcional.
+- **Multi-clip con vuelo continuo** (pago, opcional): ver `kit/scaffold/landing/vendor/README.md`.
+- **Los modelos de opencode-go no generan video** (son LLMs); la generación vive fuera del agente.
 
 ## Estructura de la página
 

@@ -44,6 +44,10 @@ export function Hero() {
 - DPR cap 2 para no reventar memoria en pantallas 3x.
 - Video sin audio y con keyframes densos; para clips largos, considerá scrubbing de video en vez de frames.
 
+## Video gratis
+
+Tres caminos (stock, AI gratis con first/last-frame, local). **Default: stock**. Detalle y tablas en el skill `scroll-landing` (`references/free-video.md`). Verificá licencia comercial (Luma/Pika free = no comercial). Los modelos de opencode-go son LLMs: no generan video.
+
 ## Multi-clip con vuelo continuo (pago, opcional)
 
 Para el efecto "vuelo por un mundo" (escenas AI + camera flights, tipo `scroll-world`), ver `vendor/README.md`. Ese pipeline genera los clips con IA y **cuesta**; el default de acá es gratis.

@@ -64,6 +64,7 @@ Verificá licencia comercial: Luma y Pika free son **NO comerciales**.
 - LCP < 2.5s (ver `performance`); los frames no deben bloquear el hero.
 - Copy a `@copywriter`; pantallas a `@ux-designer`; a11y con el skill `accessibility`.
 - Deploy con el flujo del proyecto (`/release` o preview de Vercel).
+- Refiná la UI con Impeccable (`polish`, `typeset`) — ver skill `design-system`.
 
 ## Salida
 

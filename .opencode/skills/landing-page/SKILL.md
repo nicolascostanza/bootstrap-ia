@@ -35,6 +35,7 @@ Que el visitante entienda qué es, para quién y qué hacer a continuación — 
 - Analytics: instrumentar visita y conversión del CTA (PostHog).
 - Copy: delegar a `@copywriter`; posicionamiento a `@growth-strategist`.
 - No inventar testimonios ni métricas.
+- Refiná con Impeccable (`polish`, `typeset`, `distill`) — ver skill `design-system`.
 
 ## Cómo afecta al scaffold
 

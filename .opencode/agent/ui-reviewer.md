@@ -33,4 +33,5 @@ Cerrá con veredicto y los 3 arreglos de mayor impacto.
 - Cargá `styling-ui` y `design-system` como referencia.
 - No propongas rediseños completos: cambios concretos y accionables.
 - Verificá con los tests de a11y (`axe`) si existen.
+- Complementá con Impeccable (`critique`, `audit` y su detector) — ver skill `design-system` (`references/impeccable.md`).
 - No aplicás cambios (`edit` denegado).

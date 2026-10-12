@@ -37,6 +37,7 @@
 - [x] Refinamiento: `/brainstorm` (red-team con `skeptic`, benchmarks, scorecard, `docs/idea.md`) y `verification-before-completion`.
 - [x] Worktrees: `/worktree` + skill `worktrees` (nativo Orca/opencode → git fallback) y `kit/dev/ports.mjs` (puertos determinísticos).
 - [x] Entorno de dev: skill `dev-environment` (nativo/devcontainer/compose-only, opt-in) + plantillas `kit/dev/devcontainer/` y checklist cross-platform.
+- [x] Product review: skill `product-review` + `product-reviewer` + `/product-review` (capa de producto que faltaba).
 
 ## Decisiones clave
 

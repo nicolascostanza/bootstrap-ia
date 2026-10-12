@@ -43,6 +43,7 @@
 - [x] Landing con scroll: skill `scroll-landing` + `/landing` + `kit/dev/frames.mjs` + `kit/scaffold/landing/` (motor image-sequence gratis) + `references/free-video.md` (stock / AI gratis / local).
 - [x] E2E headless: default headless, artefactos en fallo (`testing.e2eHeadless`, `testing.e2eOnFailure`) y scripts de debug.
 - [x] Git flow completo: PR template, CI (`ci.yml`, `e2e-nightly.yml`), `CONTRIBUTING.md`, branch protection y `neon-branch.mjs`.
+- [x] Git Flow (modelo): `develop` como integración, `release/*` a `main` con back-merge, `hotfix` desde `main`; CI del kit y rama `develop` creada.
 
 ## Decisiones clave
 
@@ -58,3 +59,4 @@
 
 - Instalación global: resuelta y probada en Windows; falta validar en macOS (2 máquinas).
 - Rotura por versiones: pendiente estrategia de actualización del kit.
+- Branch protection del repo del kit: **pendiente por plan** (GitHub Free no la habilita en repos privados; requiere Pro o hacer el repo público). El estándar Git Flow ya está en el kit; la barrera es solo el plan.

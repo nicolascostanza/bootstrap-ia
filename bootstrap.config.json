@@ -46,6 +46,7 @@
     "discovery": "lean-canvas+jtbd",
     "prioritization": "rice",
     "design": "shadcn",
+    "uxToolkit": "impeccable",
     "research": "light",
     "brainstorm": "guided+adversarial",
     "specFlow": "sdd-light+bdd-criteria"

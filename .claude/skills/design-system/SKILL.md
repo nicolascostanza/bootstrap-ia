@@ -44,6 +44,13 @@ Un fundamento **mínimo y consistente**, no un DS completo. El mayor ROI está e
 - Verificar con `axe` en los tests de componentes.
 - Detalle completo y checklist: skill `accessibility` (`engineering.accessibility`, default WCAG 2.2 AA).
 
+## Toolkit de UX (opcional)
+
+`product.uxToolkit` (default `impeccable`) es un toolkit externo **gratis** para criterio visual y detección de "AI slop". Detalle en `references/impeccable.md`.
+
+- Instalar por proyecto: `npx skills add pbakaus/impeccable`.
+- Este skill manda en **proceso** (tokens, estados, a11y, DoD); Impeccable aporta **taste + detector**.
+
 ## Cómo afecta al scaffold
 
 - Inicializa Tailwind + shadcn con tokens del kit.

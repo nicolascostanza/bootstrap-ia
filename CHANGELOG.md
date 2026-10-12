@@ -24,6 +24,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **Video gratis**: `scroll-landing/references/free-video.md` (stock / AI gratis con first/last-frame / local) con licencias y recomendación por caso.
 - **E2E headless**: `testing.e2eHeadless` + `testing.e2eOnFailure` (default headless, artefactos en fallo); skill `testing-e2e` con sección de navegador y scripts de debug.
 - **Git flow completo**: templates `kit/scaffold/.github/` (PR template + `ci.yml` + `e2e-nightly.yml`), `CONTRIBUTING.md`, y `kit/dev/neon-branch.mjs` (branch de Neon por PR).
+- **Toolkit de UX (Impeccable)**: `product.uxToolkit`, `design-system/references/impeccable.md` y referencias en `ux-designer`, `ui-reviewer`, `landing-page`, `scroll-landing` y `ci-cd` (detector opcional).
 
 ### Cambiado
 

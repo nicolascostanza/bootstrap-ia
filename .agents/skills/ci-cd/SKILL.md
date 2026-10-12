@@ -31,6 +31,8 @@ En orden de velocidad, todos obligatorios:
 
 `@full` E2E corre nightly y bloquea el merge si estaba en el pre-merge.
 
+Opcional (`product.uxToolkit`, ver `design-system` → `references/impeccable.md`): un check `ui-detector` que corre el detector de Impeccable sobre la UI y falla con hallazgos (ver su doc de detector para el comando exacto).
+
 ### Preview deploys
 
 - Cada PR genera preview en Vercel con su propia `DATABASE_URL` de branch de Neon.

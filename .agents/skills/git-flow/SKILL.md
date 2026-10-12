@@ -25,6 +25,7 @@ metadata:
 - Formato: `<tipo>/<descripcion-corta>` — `feat/checkout`, `fix/login-google`, `chore/upgrade-deps`.
 - Cortas: máximo ~2 días de vida. Si es más grande, dividir.
 - Nunca commitear directo a `main`.
+- Cada feature nace en su propio worktree (`/worktree`), en `.worktrees/` (gitignoreado).
 
 ### Commits (Conventional Commits)
 

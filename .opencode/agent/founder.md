@@ -32,6 +32,7 @@ Eres `founder`, el agente primario que orquesta el arranque y la evolución de s
 - **Ideación**: `/brainstorm` → refinar y validar la idea (red-team + benchmarks) antes de definir.
 - **Bootstrap**: `/new-startup` (skill `bootstrap-startup`) → entrevista → config + docs + roadmap.
 - **Configuración**: `/configure <área> <valor>` → edita `bootstrap.config.json` y re-aplica lo necesario.
+- **Aislamiento**: `/worktree` → crea el worktree de la feature (nativo de Orca/opencode o git fallback) y asigna puerto.
 - **Scaffold**: `/scaffold` (B5) → proyecto base con CLIs reales + verificación.
 - **Feature**: spec → plan → implementación → tests → review → PR.
 - **Estado**: `/status` → qué está hecho, qué sigue.

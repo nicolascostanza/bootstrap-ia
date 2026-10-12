@@ -14,6 +14,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **Subagente `skeptic`**: red-team adversarial (fortalezas, riesgos, supuestos, comparables).
 - **Skill `verification-before-completion`**: evidencia reproducible antes de declarar terminado.
 - Plantilla `kit/docs-template/idea.md`.
+- **`/worktree` + skill `worktrees`**: aislamiento por feature con herramientas nativas (Orca/opencode) y `git worktree` como fallback.
+- **`kit/dev/ports.mjs`**: puertos determinísticos por worktree (FNV-1a + probing), con `--write`, `--list`, `--count`.
 
 ### Cambiado
 
@@ -23,6 +25,8 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - `/feature` cierra con evidencia mostrada (`verification-before-completion`).
 - `bootstrap.config.json`: `product.brainstorm = guided+adversarial`.
 - `sync.mjs`: si un comando colisiona con un skill del mismo nombre, gana el skill.
+- `/feature` ofrece crear el worktree antes de codear; scaffold deja el `dev` script con `--port ${PORT:-3000}`, copia `scripts/ports.mjs` y agrega `.worktrees/` al `.gitignore`.
+- `bootstrap.config.json`: `engineering.worktrees`, `ports`, `portsBase`, `portsRange`, `dbPerWorktree`.
 
 ## [0.1.0] - 2026-10-10
 

@@ -45,6 +45,8 @@ Estas reglas aplican a todo el trabajo en este repositorio y a los proyectos que
 - **GitHub Flow** + **Conventional Commits** (`feat:`, `fix:`, `chore:`, `docs:`, `test:`, `refactor:`).
 - Ramas cortas desde `main`. PR con descripción y checks verdes.
 - No commitear archivos generados ni secretos (ver `.gitignore`).
+- Aislá cada feature en su propio worktree (`/worktree`): una feature = un worktree = una branch = un PR.
+- Puertos por worktree: `node scripts/ports.mjs` (determinístico). DB compartida: no corras migraciones en dos worktrees a la vez.
 
 ## Estado y memoria
 

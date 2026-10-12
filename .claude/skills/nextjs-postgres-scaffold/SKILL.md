@@ -66,6 +66,9 @@ Copiá desde `kit/scaffold/` (global: `~/.config/opencode/kit/scaffold/`):
 - `.env.example`
 - `lib/env.ts`, `lib/errors.ts`, `lib/logger.ts`, `lib/http.ts`
 - `lib/adapters/email.ts` (implementación de referencia del patrón adapter)
+- `scripts/ports.mjs` (copiá `kit/dev/ports.mjs`)
+
+En `package.json`, dejá el `dev` script como `"dev": "next dev --port ${PORT:-3000}"`. Agregá `.worktrees/` a `.gitignore`.
 
 Completá las env en `.env` (nunca commitear).
 

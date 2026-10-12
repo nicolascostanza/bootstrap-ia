@@ -35,6 +35,7 @@
 - [x] Zod explícito (`engineering.validation`) y skill `accessibility` (WCAG AA).
 - [x] Soporte multi-tool: `kit/sync/sync.mjs` + `kit/config/mcp.json` (Claude Code y Codex, a nivel proyecto).
 - [x] Refinamiento: `/brainstorm` (red-team con `skeptic`, benchmarks, scorecard, `docs/idea.md`) y `verification-before-completion`.
+- [x] Worktrees: `/worktree` + skill `worktrees` (nativo Orca/opencode → git fallback) y `kit/dev/ports.mjs` (puertos determinísticos).
 
 ## Decisiones clave
 

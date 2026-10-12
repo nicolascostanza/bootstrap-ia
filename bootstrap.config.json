@@ -20,6 +20,11 @@
     "validation": "zod",
     "accessibility": "wcag-aa",
     "git": "github-flow+conventional-commits",
+    "worktrees": "per-feature",
+    "ports": "deterministic",
+    "portsBase": 3000,
+    "portsRange": 999,
+    "dbPerWorktree": false,
     "layout": "single-nextjs",
     "backendHost": "render"
   },

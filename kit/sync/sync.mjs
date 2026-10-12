@@ -201,6 +201,9 @@ async function syncCommands() {
   const commands = await readConfigs(SOURCES.commands);
   for (const command of commands) {
     await emit(join(TARGET, ".claude", "commands", `${command.name}.md`), toClaudeCommand(command));
+    const collidesWithSkill =
+      SOURCES.skills && existsSync(join(SOURCES.skills, command.name, "SKILL.md"));
+    if (collidesWithSkill) continue;
     await emit(join(TARGET, ".agents", "skills", command.name, "SKILL.md"), toCodexCommandSkill(command));
     await emit(join(TARGET, ".agents", "skills", command.name, "agents", "openai.yaml"), CODEX_COMMAND_POLICY);
   }

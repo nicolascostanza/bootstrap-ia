@@ -15,6 +15,7 @@ Estas reglas aplican a todo el trabajo en este repositorio y a los proyectos que
 3. **Adapters solo en bordes de swap/confianza**: pagos, auth, email, mensajería, observabilidad. Interfaces finas, sin abstracción prematura.
 4. **Spec-first**: antes de implementar una feature, generá una spec con criterios Given/When/Then. Después los tests.
 5. **Scaffold con CLIs reales**: nunca generes boilerplate de frameworks a mano. Usá `create-next-app`, el CLI de shadcn, migraciones reales y verificá con `build` + tests.
+6. **Verificación antes de declarar listo**: mostrá la evidencia (comando + salida) antes de decir "terminado". Ver skill `verification-before-completion`.
 
 ## Código
 

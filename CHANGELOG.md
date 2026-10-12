@@ -10,11 +10,19 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - Accesibilidad explícita: `engineering.accessibility` (default **WCAG 2.2 AA**) y skill `accessibility`.
 - Soporte **multi-tool**: `kit/sync/sync.mjs` genera artefactos para **Claude Code** (`.claude/agents`, `.claude/commands`, `.claude/skills`, `CLAUDE.md`, `.mcp.json`) y **Codex** (`.codex/agents`, `.codex/config.toml`, `.agents/skills`).
 - Fuente MCP neutra en `kit/config/mcp.json` (una sola fuente → opencode, Claude y Codex) y documentación en `kit/multitool/`.
+- **`/brainstorm`**: espacio guiado de ideación con red-team, benchmarks, scorecard y veredicto; artefacto `docs/idea.md`.
+- **Subagente `skeptic`**: red-team adversarial (fortalezas, riesgos, supuestos, comparables).
+- **Skill `verification-before-completion`**: evidencia reproducible antes de declarar terminado.
+- Plantilla `kit/docs-template/idea.md`.
 
 ### Cambiado
 
 - Scaffold instala `zod`, `jest-axe` y `@axe-core/playwright`.
 - Comandos neutros entre herramientas (sin referencias a `tool task`/`tool skill`) y `sync` integrado en `/new-startup` y `/scaffold`.
+- `/new-startup` advierte (sin bloquear) si no existe `docs/idea.md` y ofrece `/brainstorm`.
+- `/feature` cierra con evidencia mostrada (`verification-before-completion`).
+- `bootstrap.config.json`: `product.brainstorm = guided+adversarial`.
+- `sync.mjs`: si un comando colisiona con un skill del mismo nombre, gana el skill.
 
 ## [0.1.0] - 2026-10-10
 

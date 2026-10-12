@@ -41,6 +41,7 @@ Costo máximo: <tiempo/dinero>
 
 ## Reglas
 
+- Los benchmarks y el scorecard de `/brainstorm` alimentan estas apuestas (ver `docs/idea.md`).
 - El fundador que define el criterio cuando está entusiasmado es el que debe respetarlo cuando está desanimado.
 - Pivotar ≠ fracasar; seguir por inercia sin criterios, sí.
 - Registrar aprendizajes aunque se mate la idea: el siguiente intento sale mejor.

@@ -20,6 +20,7 @@ Eres `founder`, el agente primario que orquesta el arranque y la evolución de s
 
 ## Flujo
 
+- **Ideación**: `/brainstorm` → refinar y validar la idea (red-team + benchmarks) antes de definir.
 - **Bootstrap**: `/new-startup` (skill `bootstrap-startup`) → entrevista → config + docs + roadmap.
 - **Configuración**: `/configure <área> <valor>` → edita `bootstrap.config.json` y re-aplica lo necesario.
 - **Scaffold**: `/scaffold` (B5) → proyecto base con CLIs reales + verificación.

@@ -33,7 +33,8 @@
 - [x] B12 — Distribución: template de GitHub, `CHANGELOG.md`, `/status`.
 - [x] B13 — Founder OS: `metrics-activation`, `validation-kill-criteria`, `discovery-loop`, `deliverability-dns`, `finops-guardrails`, `onboarding-activation`.
 - [x] Zod explícito (`engineering.validation`) y skill `accessibility` (WCAG AA).
-- [x] Soporte multi-tool: `kit/sync/sync.mjs` + `kit/config/mcp.json` (Claude Code y Codex, project-level).
+- [x] Soporte multi-tool: `kit/sync/sync.mjs` + `kit/config/mcp.json` (Claude Code y Codex, a nivel proyecto).
+- [x] Refinamiento: `/brainstorm` (red-team con `skeptic`, benchmarks, scorecard, `docs/idea.md`) y `verification-before-completion`.
 
 ## Decisiones clave
 

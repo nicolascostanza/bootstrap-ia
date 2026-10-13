@@ -39,7 +39,7 @@ Define y documenta una startup nueva partiendo de defaults sensatos, dejando tod
 5. **Ronda C — Capacidades**: email, mensajería, analytics, observabilidad, pagos.
 6. **Ronda D — Producto/GTM**: priorización, canales, posicionamiento, tono de marca.
 7. **Ronda E — Legal/Finanzas**: jurisdicción, docs legales, pricing, facturación.
-8. **Ronda L — Librería** (solo si `project.type = library`): `library.kind` (util/ui/framework; core+adapters/sdk luego), build, formato, publish, docs, testing (vitest), monetización, MoR, gate.
+8. **Ronda L — Librería** (solo si `project.type = library`): `library.kind` (`util`/`ui`/`framework` → paquete único; `core+adapters`/`sdk` → **monorepo**), `library.layout`, build, formato, publish, docs, testing (vitest), monetización, MoR, gate; para `sdk`, `library.apiSpec` y `sdkTargets`.
 9. **Escribir `bootstrap.config.json`** en el directorio actual, partiendo de los defaults y aplicando las respuestas. No borres claves.
 10. **Generar `docs/`** desde `kit/docs-template/`: los documentos core + `docs/README.md` (índice) y las subcarpetas `specs/`, `adr/`, `reviews/`, `research/` (skill `project-structure`). Las features del MVP se especifican con `/feature` en `docs/specs/`.
 11. **MVP + backlog RICE** en `docs/roadmap.md`, con los skills del kit aplicables por feature.

@@ -12,10 +12,10 @@ metadata:
 
 ## Cuándo
 
-`project.type = "library"`. Tipos (`library.kind`):
+`project.type = "library"`. Dos layouts según `library.kind` (`library.layout`):
 
-- `util`, `framework`, `ui` → **esta iteración** (paquete único).
-- `core+adapters`, `sdk` → **monorepo** (siguiente iteración).
+- `util`, `framework`, `ui` → **paquete único** (`single`).
+- `core+adapters`, `sdk` → **monorepo** pnpm workspaces + Changesets (`monorepo`).
 
 ## Estructura
 
@@ -51,11 +51,37 @@ metadata:
 - Dual format → ojo con el **dual package hazard** (evitá estado global/singletons).
 - npm: **Granular Access Token** (los classic están deprecados); `--access public` en paquetes scoped.
 - No hand-write boilerplate: `pnpm init` + plantillas + verificación con `build`/`test`.
-- Para `sdk` (futuro): OpenAPI → clientes generados (OpenAPI Generator/Kiota); monorepo `packages/<lang>`.
+- Para `sdk`: OpenAPI → cliente TS generado (`@hey-api/openapi-ts`, sin Java); `packages/sdk`.
+
+## Monorepo (`core+adapters` / `sdk`)
+
+Plantilla: `kit/scaffold/library-monorepo/` (global: `~/.config/opencode/kit/scaffold/library-monorepo/`).
+Detalle y decisiones en `references/monorepo.md`.
+
+```
+<lib>/
+├─ pnpm-workspace.yaml        # packages/* + packages/adapters/*
+├─ package.json               # raíz privada + scripts pnpm -r
+├─ tsconfig.base.json
+├─ .changeset/config.json
+├─ .github/workflows/{ci.yml,release.yml}
+└─ packages/
+   ├─ core/                   # lógica + ports (interfaces), sin deps de adapters
+   ├─ adapters/<tool>/        # implementan ports de core (core+adapters)
+   └─ sdk/                    # cliente del API (kind sdk)
+```
+
+1. Copiá `kit/scaffold/library-monorepo/` a la raíz y ajustá `@org/…`.
+2. `pnpm add -D -w tsdown typescript vitest @changesets/cli publint @arethetypeswrong/cli`
+   (y `@hey-api/openapi-ts` si es `sdk`).
+3. `core+adapters`: `packages/core` + `packages/adapters/*` (borrá `sdk`).
+   `sdk`: `packages/core` + `packages/sdk` (poné `openapi/openapi.yaml` y `pnpm --filter @org/sdk generate`).
+4. Internos con `workspace:*`. **Sentido de dependencia: adapters → core** (core nunca importa adapters).
+5. Verificá `pnpm install && pnpm build && pnpm test && pnpm check:package`.
 
 ## Cómo afecta al proyecto
 
-`bootstrap.config.json` → `library.*`; `project-structure` documenta el árbol.
+`bootstrap.config.json` → `library.*` (`kind`, `layout`, `apiSpec`, `sdkTargets`); `project-structure` documenta el árbol.
 
 ## Salida
 

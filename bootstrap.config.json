@@ -46,6 +46,7 @@
   },
   "library": {
     "kind": "util",
+    "layout": "single",
     "language": "typescript",
     "build": "tsdown",
     "format": "dual",
@@ -54,7 +55,9 @@
     "testing": "vitest",
     "monetization": "freemium",
     "mint": "polar",
-    "licenseGate": "online"
+    "licenseGate": "online",
+    "apiSpec": "openapi",
+    "sdkTargets": ["typescript"]
   },
   "product": {
     "discovery": "lean-canvas+jtbd",

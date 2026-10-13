@@ -4,6 +4,14 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-12
+
+### Pull requests
+
+- #1 docs: branch protection activa en main y develop
+- #3 feat: toolkit de UX (Impeccable) como referencia opcional
+- #5 feat: track de librerías/SDK (project.type, library.*, /library)
+
 ### Agregado
 
 - Validación explícita en el config: `engineering.validation` (default **Zod**; alternativas `valibot`, `arktype`, `none`).

@@ -5,12 +5,11 @@
 ## Estado actual
 
 - **Fase**: B0–B13 completados + refinamientos (brainstorm, worktrees/ports, dev-environment, product-review, paralelismo, structure/specs, landing/scroll, e2e headless, Impeccable UX, track de librerías/SDK, track mobile) y soporte multi-tool.
-- **Kit version**: 0.2.0 (mergeado a `main` vía PR #4; back-merge a `develop`).
+- **Kit version**: 0.3.0 (release/0.3.0 → `main` + back-merge a `develop`).
 - **Repo**: público, `bootstrap-ia`. Git Flow: `main` (producción) + `develop` (integración), branch protection activa (`PR + 1 review + check ci`, `enforce_admins: false`).
 
 ## Próximo paso
 
-- Release **0.3.0** (`[Unreleased]`: monorepo de libs + track mobile) cuando cierren los refinamientos.
 - Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold`/`/library`/`/mobile` → `/feature`) y ajustar lo que friccione.
 - Validar la instalación en macOS y el soporte multi-tool en Claude Code y Codex reales.
 

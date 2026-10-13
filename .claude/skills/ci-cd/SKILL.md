@@ -60,6 +60,16 @@ Opcional (`product.uxToolkit`, ver `design-system` → `references/impeccable.md
 
 - Copia `kit/scaffold/.github/workflows/` (`ci.yml`, `e2e-nightly.yml`) y `scripts/neon-branch.mjs` (branch de Neon por PR, requiere `NEON_API_KEY`).
 
+## Mobile (EAS)
+
+Aplica cuando `project.type` incluye `mobile` (ver skill `mobile-scaffold` → `references/distribution.md`).
+
+- **CI**: `eas build` con `EXPO_TOKEN` (secret). Preview por PR (perfil `preview`, internal distribution) + canal OTA `preview`.
+- **Release**: `eas build --profile production` + `eas submit` (TestFlight / Play); OTA con `eas update --branch production`.
+- **OTA** (`eas-updates`) solo para JS/estilos/assets. Cambios nativos, permisos o bump de SDK → **build + review** de la store.
+- Store review: cada build de producción pasa por Apple/Google.
+- Unit (`jest-expo`+RNTL) en cada PR; E2E (**Maestro**) `@critical` en PR y `@full` nightly.
+
 ## Checklist
 
 - [ ] Todos los checks obligatorios corriendo.

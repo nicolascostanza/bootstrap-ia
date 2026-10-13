@@ -4,15 +4,14 @@
 
 ## Estado actual
 
-- **Fase**: B0–B13 completados. Kit 0.1.0 funcional de punta a punta.
-- **Kit version**: 0.1.0
-- **Repo**: privado, `bootstrap-ia`.
+- **Fase**: B0–B13 completados + refinamientos (brainstorm, worktrees/ports, dev-environment, product-review, paralelismo, structure/specs, landing/scroll, e2e headless, Impeccable UX, track de librerías/SDK, track mobile) y soporte multi-tool.
+- **Kit version**: 0.3.0 (release/0.3.0 → `main` + back-merge a `develop`).
+- **Repo**: público, `bootstrap-ia`. Git Flow: `main` (producción) + `develop` (integración), branch protection activa (`PR + 1 review + check ci`, `enforce_admins: false`).
 
 ## Próximo paso
 
-- Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold` → `/feature`) y ajustar lo que friccione.
-- Validar la instalación en macOS.
-- Validar el soporte multi-tool en Claude Code y Codex reales.
+- Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold`/`/library`/`/mobile` → `/feature`) y ajustar lo que friccione.
+- Validar la instalación en macOS y el soporte multi-tool en Claude Code y Codex reales.
 
 ## Hitos completados
 
@@ -45,6 +44,9 @@
 - [x] Git flow completo: PR template, CI (`ci.yml`, `e2e-nightly.yml`), `CONTRIBUTING.md`, branch protection y `neon-branch.mjs`.
 - [x] Git Flow (modelo): `develop` como integración, `release/*` a `main` con back-merge, `hotfix` desde `main`; CI del kit y rama `develop` creada.
 - [x] Toolkit de UX (Impeccable, gratis): `product.uxToolkit`, `design-system/references/impeccable.md` y referencias en las skills de diseño/landing.
+- [x] Track de librerías/SDK: `project.type` + `deliverables`, config `library.*`, skills `library-scaffold`/`library-monetization`, comando `/library` y `kit/scaffold/library/` (tsdown + Changesets + publint/attw + vitest).
+- [x] Track de librerías/SDK — monorepo: `library.layout` (`core+adapters`/`sdk`), `apiSpec`/`sdkTargets`, plantilla `kit/scaffold/library-monorepo/` (pnpm workspaces: `core`/`adapters`/`sdk`) y `library-scaffold/references/monorepo.md`.
+- [x] Track `mobile`: `mobile.framework` (Expo default / native / kmp), comando `/mobile`, skill `mobile-scaffold` (+ `references/`) y plantilla `kit/scaffold/mobile/` (Expo); `/release` y `ci-cd` con rama EAS, y Ronda M en `bootstrap-startup`.
 
 ## Decisiones clave
 

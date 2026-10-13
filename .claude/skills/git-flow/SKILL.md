@@ -76,6 +76,7 @@ Con `enforce_admins: false`, el dueño (admin) puede mergear en solitario sin qu
 
 - `package.json.version` es la fuente de verdad (SemVer).
 - `CHANGELOG.md` se arma desde los commits convencionales; tag `vX.Y.Z` en `main`.
+- En repos `library`, el release usa **Changesets** y publica a npm (ver skill `library-scaffold`), no tag→main de app.
 - Flujo: `release/X.Y.Z` desde `develop` → PR a `main` → tag → back-merge a `develop`.
 
 ## Cómo afecta al scaffold

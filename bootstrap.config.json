@@ -3,6 +3,8 @@
   "kitVersion": "0.1.0",
   "project": {
     "name": "",
+    "type": "web-app",
+    "deliverables": ["web-app"],
     "jurisdiction": "AR",
     "stage": "bootstrapped",
     "language": "es"
@@ -41,6 +43,18 @@
     "uptime": "better-stack",
     "payments": "mercadopago",
     "paymentsAdapter": true
+  },
+  "library": {
+    "kind": "util",
+    "language": "typescript",
+    "build": "tsdown",
+    "format": "dual",
+    "publish": "npm",
+    "docs": "typedoc",
+    "testing": "vitest",
+    "monetization": "freemium",
+    "mint": "polar",
+    "licenseGate": "online"
   },
   "product": {
     "discovery": "lean-canvas+jtbd",

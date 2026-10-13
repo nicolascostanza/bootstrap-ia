@@ -48,6 +48,19 @@ metadata:
 - Al **agregar una carpeta de docs**, actualizá `docs/README.md`.
 - Código: `lib/adapters/*` solo en bordes de swap; en `app/` solo composición, sin lógica de negocio.
 
+## Estructura de librería (`project.type = library`)
+
+```
+<lib>/
+├─ package.json          # exports (types primero), files:["dist"], type:module
+├─ tsdown.config.ts · tsconfig.json · vitest.config.ts
+├─ .changeset/config.json
+├─ .github/workflows/{ci.yml,release.yml}
+├─ src/ · dist/          # dist no se commitea
+├─ README.md · LICENSE · CHANGELOG.md
+```
+Para `core+adapters` y `sdk` (futuro): monorepo `packages/core` + `packages/react|vue|…` (pnpm workspaces + Changesets).
+
 ## Cómo crece `docs/`
 
 - **Core plano**: los documentos vivos del negocio y producto.

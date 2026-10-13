@@ -25,6 +25,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - **E2E headless**: `testing.e2eHeadless` + `testing.e2eOnFailure` (default headless, artefactos en fallo); skill `testing-e2e` con sección de navegador y scripts de debug.
 - **Git flow completo**: templates `kit/scaffold/.github/` (PR template + `ci.yml` + `e2e-nightly.yml`), `CONTRIBUTING.md`, y `kit/dev/neon-branch.mjs` (branch de Neon por PR).
 - **Toolkit de UX (Impeccable)**: `product.uxToolkit`, `design-system/references/impeccable.md` y referencias en `ux-designer`, `ui-reviewer`, `landing-page`, `scroll-landing` y `ci-cd` (detector opcional).
+- **Track de librerías/SDK**: `project.type` + `deliverables`, config `library.*`, skills `library-scaffold` y `library-monetization` (+`references/monetization.md`), comando `/library` y plantillas `kit/scaffold/library/` (tsdown + Changesets + publint/attw + vitest).
 
 ### Cambiado
 
@@ -35,6 +36,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 - `bootstrap.config.json`: `product.brainstorm = guided+adversarial`.
 - `sync.mjs`: si un comando colisiona con un skill del mismo nombre, gana el skill.
 - **Git Flow**: features desde `develop`, `release/X.Y.Z` hacia `main` (con back-merge), `hotfix` desde `main`. CI del kit (`.github/workflows/ci.yml`) y rama `develop` creada.
+- `new-startup` agrega la **Ronda 0 (tipo)** y la **Ronda L (librería)**; `/release` ramifica por `project.type`; `project-structure` documenta el árbol de librería.
 - `git-flow` y `ci-cd` documentan branch protection (`gh api`) y release/versionado; `/feature` usa la branch del worktree y crea el PR con `gh pr create`; `/release` sube `package.json.version`.
 - `/feature` ofrece crear el worktree antes de codear; scaffold deja el `dev` script con `--port ${PORT:-3000}`, copia `scripts/ports.mjs` y agrega `.worktrees/` al `.gitignore`.
 - `/feature` cierra sugiriendo `/product-review`.

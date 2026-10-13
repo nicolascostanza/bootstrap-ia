@@ -76,6 +76,31 @@ metadata:
 ```
 Sentido de dependencia: `adapters → core`, `sdk → core`. `core` nunca importa adapters.
 
+## Estructura mobile (`project.type` incluye `mobile`)
+
+**Expo (default):**
+
+```
+<app>/
+├─ app/                     # Expo Router (_layout.tsx, index.tsx)
+├─ lib/env.ts               # validación de env (EXPO_PUBLIC_*)
+├─ app.json · eas.json · tsconfig.json · jest.config.js
+├─ .maestro/                # flujos E2E (Maestro)
+└─ .easignore · .env        # .env no se commitea
+```
+
+**Nativo (Kotlin + Swift):** `android/` (Gradle + Compose) + `ios/` (SwiftUI, proyecto vía Tuist/XcodeGen).
+**KMP:** `shared/` (`commonMain`/`androidMain`/`iosMain`) + `androidApp/` + `iosApp/`.
+
+**Monorepo web + mobile** (`mobile.shared = monorepo`):
+
+```
+<monorepo>/
+├─ pnpm-workspace.yaml
+├─ apps/web/     · apps/mobile/
+└─ packages/shared/   # tipos, schemas Zod y lógica pura (sin dependencias de plataforma)
+```
+
 ## Cómo crece `docs/`
 
 - **Core plano**: los documentos vivos del negocio y producto.

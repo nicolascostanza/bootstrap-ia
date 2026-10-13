@@ -4,14 +4,14 @@
 
 ## Estado actual
 
-- **Fase**: B0–B13 completados + refinamientos (brainstorm, worktrees/ports, dev-environment, product-review, paralelismo, structure/specs, landing/scroll, e2e headless, Impeccable UX, track de librerías/SDK) y soporte multi-tool.
+- **Fase**: B0–B13 completados + refinamientos (brainstorm, worktrees/ports, dev-environment, product-review, paralelismo, structure/specs, landing/scroll, e2e headless, Impeccable UX, track de librerías/SDK, track mobile) y soporte multi-tool.
 - **Kit version**: 0.2.0 (mergeado a `main` vía PR #4; back-merge a `develop`).
 - **Repo**: público, `bootstrap-ia`. Git Flow: `main` (producción) + `develop` (integración), branch protection activa (`PR + 1 review + check ci`, `enforce_admins: false`).
 
 ## Próximo paso
 
-- Track `mobile` (Expo): diferido, pendiente de plan/decisión.
-- Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold` → `/feature`) y ajustar lo que friccione.
+- Release **0.3.0** (`[Unreleased]`: monorepo de libs + track mobile) cuando cierren los refinamientos.
+- Dogfooding: usar el kit en una startup real (`/new-startup` → `/scaffold`/`/library`/`/mobile` → `/feature`) y ajustar lo que friccione.
 - Validar la instalación en macOS y el soporte multi-tool en Claude Code y Codex reales.
 
 ## Hitos completados
@@ -47,6 +47,7 @@
 - [x] Toolkit de UX (Impeccable, gratis): `product.uxToolkit`, `design-system/references/impeccable.md` y referencias en las skills de diseño/landing.
 - [x] Track de librerías/SDK: `project.type` + `deliverables`, config `library.*`, skills `library-scaffold`/`library-monetization`, comando `/library` y `kit/scaffold/library/` (tsdown + Changesets + publint/attw + vitest).
 - [x] Track de librerías/SDK — monorepo: `library.layout` (`core+adapters`/`sdk`), `apiSpec`/`sdkTargets`, plantilla `kit/scaffold/library-monorepo/` (pnpm workspaces: `core`/`adapters`/`sdk`) y `library-scaffold/references/monorepo.md`.
+- [x] Track `mobile`: `mobile.framework` (Expo default / native / kmp), comando `/mobile`, skill `mobile-scaffold` (+ `references/`) y plantilla `kit/scaffold/mobile/` (Expo); `/release` y `ci-cd` con rama EAS, y Ronda M en `bootstrap-startup`.
 
 ## Decisiones clave
 

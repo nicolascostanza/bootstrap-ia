@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "app",
+    "slug": "app",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "scheme": "app",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.app"
+    },
+    "android": {
+      "package": "com.example.app",
+      "edgeToEdgeEnabled": true
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}

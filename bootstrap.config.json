@@ -59,6 +59,21 @@
     "apiSpec": "openapi",
     "sdkTargets": ["typescript"]
   },
+  "mobile": {
+    "framework": "expo",
+    "targets": ["ios", "android"],
+    "language": "typescript",
+    "router": "expo-router",
+    "updates": "eas-updates",
+    "distribution": "eas",
+    "testing": "jest-expo+rntl+maestro",
+    "push": "expo-notifications",
+    "analytics": "posthog",
+    "errors": "sentry",
+    "payments": "stores",
+    "nativeEscape": "expo-prebuild",
+    "shared": "monorepo"
+  },
   "product": {
     "discovery": "lean-canvas+jtbd",
     "prioritization": "rice",

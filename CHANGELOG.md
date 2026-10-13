@@ -7,6 +7,7 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 ### Agregado
 
 - **Track de librerías/SDK — monorepo** (`library.layout`): kinds `core+adapters` y `sdk`. Config `library.layout`/`apiSpec`/`sdkTargets`; plantilla `kit/scaffold/library-monorepo/` (pnpm workspaces: `packages/core` con ports + `packages/adapters/*` + `packages/sdk`; CI/release con Changesets); `library-scaffold/references/monorepo.md`; árbol monorepo en `project-structure`.
+- **Track `mobile`** (`project.type` incluye `mobile`): `mobile.framework` (**Expo** default; `native` Kotlin+Swift; `kmp`), `targets`, `router`, `updates` (EAS OTA), `distribution` (EAS), `testing` (`jest-expo+rntl+maestro`), `payments` (stores) y `shared` (monorepo con la web). Comando `/mobile`, skill `mobile-scaffold` (+ `references/`: `expo`, `native`, `kmp`, `distribution`, `monetization`, `testing`, `shared`) y plantilla `kit/scaffold/mobile/` (Expo). `/release` y `ci-cd` suman la rama mobile; `project-structure` agrega los árboles; `bootstrap-startup` agrega la Ronda M.
 
 ## [0.2.0] - 2026-10-12
 

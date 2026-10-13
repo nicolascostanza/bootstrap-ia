@@ -1,6 +1,6 @@
 {
   "$comment": "Fuente unica de verdad del kit. Todo por defecto, todo configurable con /configure.",
-  "kitVersion": "0.1.0",
+  "kitVersion": "0.2.0",
   "project": {
     "name": "",
     "type": "web-app",

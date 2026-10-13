@@ -44,6 +44,7 @@
 - [x] E2E headless: default headless, artefactos en fallo (`testing.e2eHeadless`, `testing.e2eOnFailure`) y scripts de debug.
 - [x] Git flow completo: PR template, CI (`ci.yml`, `e2e-nightly.yml`), `CONTRIBUTING.md`, branch protection y `neon-branch.mjs`.
 - [x] Git Flow (modelo): `develop` como integración, `release/*` a `main` con back-merge, `hotfix` desde `main`; CI del kit y rama `develop` creada.
+- [x] Toolkit de UX (Impeccable, gratis): `product.uxToolkit`, `design-system/references/impeccable.md` y referencias en las skills de diseño/landing.
 
 ## Decisiones clave
 

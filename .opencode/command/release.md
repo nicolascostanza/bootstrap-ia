@@ -7,6 +7,7 @@ Release: `$ARGUMENTS`
 
 Cargá `ci-cd` y `git-flow`, y ejecutá:
 
+0. Si `project.type = "library"`: el release es distinto — usá Changesets (`changeset version` + publish a npm, ver skill `library-scaffold`), no tag→main de app. El resto de este flujo es para `web-app`.
 1. Verificá que `develop` está verde (todos los checks) y sin pendientes.
 2. Creá `release/<X.Y.Z>` desde `develop`; subí `version` en `package.json` (SemVer) y actualizá `CHANGELOG.md` desde los commits convencionales.
 3. PR de `release/<X.Y.Z>` → `main` (`gh pr create --base main`), con checks verdes.

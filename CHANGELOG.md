@@ -4,6 +4,10 @@ Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y 
 
 ## [Unreleased]
 
+### Agregado
+
+- **Track de librerías/SDK — monorepo** (`library.layout`): kinds `core+adapters` y `sdk`. Config `library.layout`/`apiSpec`/`sdkTargets`; plantilla `kit/scaffold/library-monorepo/` (pnpm workspaces: `packages/core` con ports + `packages/adapters/*` + `packages/sdk`; CI/release con Changesets); `library-scaffold/references/monorepo.md`; árbol monorepo en `project-structure`.
+
 ## [0.2.0] - 2026-10-12
 
 ### Pull requests

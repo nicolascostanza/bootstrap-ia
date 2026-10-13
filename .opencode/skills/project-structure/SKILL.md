@@ -50,6 +50,8 @@ metadata:
 
 ## Estructura de librería (`project.type = library`)
 
+**Layout `single`** (`library.kind` = `util` / `ui` / `framework`):
+
 ```
 <lib>/
 ├─ package.json          # exports (types primero), files:["dist"], type:module
@@ -57,9 +59,22 @@ metadata:
 ├─ .changeset/config.json
 ├─ .github/workflows/{ci.yml,release.yml}
 ├─ src/ · dist/          # dist no se commitea
-├─ README.md · LICENSE · CHANGELOG.md
+└─ README.md · LICENSE · CHANGELOG.md
 ```
-Para `core+adapters` y `sdk` (futuro): monorepo `packages/core` + `packages/react|vue|…` (pnpm workspaces + Changesets).
+
+**Layout `monorepo`** (`library.kind` = `core+adapters` / `sdk`):
+
+```
+<lib>/
+├─ pnpm-workspace.yaml            # packages/* + packages/adapters/*
+├─ package.json · tsconfig.base.json · .changeset/config.json
+├─ .github/workflows/{ci.yml,release.yml}
+└─ packages/
+   ├─ core/                       # ports (interfaces) + lógica agnóstica
+   ├─ adapters/<tool>/            # implementan ports de core (core+adapters)
+   └─ sdk/                        # cliente del API (kind sdk)
+```
+Sentido de dependencia: `adapters → core`, `sdk → core`. `core` nunca importa adapters.
 
 ## Cómo crece `docs/`
 
